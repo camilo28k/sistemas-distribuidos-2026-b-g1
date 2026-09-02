@@ -1,69 +1,56 @@
-<!-- HU-STATUS TEMPLATE - do NOT remove the <!-- ... --> markers or the table headers.
-     Your weekly grade is read AUTOMATICALLY from this file:
-       01-week/hu-status/README.md  (inside YOUR fork). English. -->
+<!--
+ Your weekly grade is read AUTOMATICALLY from this file:
+   01-week/hu-status/README.md  (inside YOUR fork). English.
+-->
 
 # Weekly Status - Week 01
 
-<!-- CONFIG-START - must match your profile repo (username/username) CONFIG -->
-- FULL_NAME: Jesus Ariel Gonzalez Bonilla
-- GITHUB_USER: ariel5253
-- TEAM: Group 1 - PRJ-FERRETERIA-V13
-- SPRINT_GOAL: Turn the hardware-store cash-control brief into a bounded context map, an ADR for the architectural style, and a testable backlog of income/expense/summary user stories.
-<!-- CONFIG-END -->
+- FULL_NAME: Harold Camilo Barrera Giraldo
+- GITHUB_USER: camilo28k
+- TEAM: [TEAM NAME]
+- SPRINT_GOAL: Contribute to the initial project documentation and define the authentication and security foundation for OdontoSys.
 
 ## 1. User stories worked this week
+
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-FIN-001 | Register an income movement with date, category, amount and optional note | doing | https://github.com/code-corhuila/sistemas-distribuidos-2026-b-g1/commit/b4ae1cc |
-| HU-FIN-002 | Register an expense movement with date, category, amount and optional note | todo | Pending - branch hu-fin-002-dev not opened yet |
-| HU-FIN-003 | Query a period summary (day/week/month) with total income, total expense and net balance | doing | https://github.com/code-corhuila/sistemas-distribuidos-2026-b-g1/commit/b4ae1cc |
-| HU-FIN-004 | Manage income and expense categories to classify each movement | todo | Pending - branch hu-fin-004-dev not opened yet |
-| HU-FIN-005 | List the movement detail of a period to reconcile a balance that does not add up | todo | Pending - branch hu-fin-005-dev not opened yet |
+| HU-00 | Document part 3 of the PDR | done | [Commit — docs: add part 3 of PDR](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/1d3fedb1b77b8124597671d0bcc83e6ef23d7551) |
 
 ## 2. My individual contribution
-- Wrote the product brief (`prd.md`) for PRJ-FERRETERIA-V13: initial context, needs and problems, current process, open questions and business glossary (income, expense, net balance, daily cut, period, category).
-- Fixed the declared stack and its boundaries: Angular frontend, Go backend, MySQL database. Explicitly scoped the product **out** of POS, invoicing, per-product inventory and ERP - the deliverable is aggregated financial control only.
-- Derived the first backlog (HU-FIN-001 .. HU-FIN-005) from the "needs and problems" section, so every story traces back to a stated business need instead of a technical guess.
-- Applied the Week-2 session material (see the summary below): drafted the **context map first** - a single `Finance` bounded context owning movements, categories and period summaries - before proposing any service boundary.
-- Started **ADR-001 (architectural style)**: context = one administrator, low transaction volume, daily/weekly/monthly aggregate queries; decision = modular monolith in Go with a REST contract for Angular; alternatives rejected = microservices (no real scale or deploy need) and event-driven (no asynchronous integration in scope); consequences = simpler operation now, one extraction point later if reporting grows.
-- Applied the microservice extraction rule from the session (real boundary **+** real scale/deploy need). Neither condition holds today, so the decision is documented as "well-designed modular monolith" rather than a distributed monolith with a shared database.
-- Sketched the hexagonal layering for the Go side: `domain` (Movement, Category, Period, net-balance calculation) with no I/O, `application` (use cases), `infrastructure` (MySQL repository, HTTP handlers).
+
+- I contributed to the project documentation for **OdontoSys**, focusing on the authentication and security component.
+- I documented the **Auth Service** as a transversal component responsible for identity management and security.
+- I defined the main responsibilities of the Auth Service, including user registration, login, JWT generation and validation, refresh tokens, role and permission management, MFA, session management, device management, and access control.
+- I documented the initial role model of the system: Patient, Dentist, and Administrator.
+- I documented the authorization flow in which authentication is centralized through Auth while each microservice applies authorization to its own resources.
+- I documented the security mechanisms considered for the project, including JWT, refresh tokens, roles and permissions, MFA, session management, device control, rate limiting, auditing, HTTPS, and secure secret management.
+- I documented the authentication micro frontend and its responsibilities for login, registration, password recovery, and MFA.
+- I contributed this work as part of **Part 3 of the PDR**, reflected in the commit `docs: add part 3 of PDR`.
 
 ## 3. Blockers and risks
-- **Open questions in the brief are still unanswered** and they block acceptance criteria: initial category catalogue, single vs. multiple users, whether a daily cut locks later edits, whether movements can be edited/voided, CSV/PDF export, and whether the net balance is per period only or also cumulative.
-- The edit/void and daily-cut answers change the domain model directly (immutable ledger + reversal entries vs. mutable rows), so HU-FIN-001 and HU-FIN-002 cannot be closed until that is decided.
-- Security level for system access is undefined; without it I cannot size the authentication story or decide if it belongs to Corte 1.
-- No environment branches (`develop`, `qa`) exist in the repository yet, so the per-environment HU branch + PR flow could not be exercised this week - only `main` is present.
-- Risk of scope creep towards a POS: the brief rules it out, and every new story must be checked against that boundary before it enters the backlog.
+
+- Some project details are still being defined as the architecture and requirements continue to evolve.
+- The final implementation details for authentication, authorization, MFA, sessions, and device management still need to be validated during development.
+- The final repository organization and deployment configuration may require further definition.
+- The exact implementation of roles and permissions must remain consistent across the Auth Service and the individual microservices.
 
 ## 4. Plan for next week
-- Close the open questions with the stakeholder and convert each answer into an acceptance criterion.
-- Publish `ADR-001` as a file in the repository (Context / Decision / Alternatives / Consequences) following the session template.
-- Create `develop` and `qa`, then open `hu-fin-001-dev` and `hu-fin-002-dev` with PRs to `develop`.
-- Implement the `Movement` and `Category` domain in Go with unit tests for the net-balance calculation, keeping the domain free of I/O.
-- Define the MySQL schema (movements, categories) and the REST contract consumed by Angular.
-- Build the period-summary endpoint (day/week/month) plus an integration test against MySQL.
+
+- Continue refining the PDR as the project requirements and architecture are validated.
+- Continue defining the authentication and authorization flows for OdontoSys.
+- Detail how JWT, roles, permissions, and security controls will be integrated with the microservices.
+- Keep the documentation aligned with the implementation decisions made by the team.
+- Continue working on the project according to the defined distributed architecture and microservice boundaries.
 
 ## 5. Compliance self-check
-- [x] Conventional Commits - `type(scope): summary`
-- [ ] Per-environment HU branch + PR to that environment (hu-xxx-dev -> develop, ...)
-- [ ] Testable acceptance criteria
-- [ ] Tests added/updated (unit / integration)
-- [ ] DDD / hexagonal boundaries respected (domain has no I/O)
-- [x] No secrets; config via environment variables
 
-Notes on the unchecked items:
-- Only `main` exists so far, so no HU branch or PR to `develop` could be opened.
-- Acceptance criteria stay draft until the open questions in section 3 are answered.
-- No production code was written this week, so there is nothing to test yet.
-- The hexagonal layering is designed but not yet materialised in code.
+- Conventional Commits - `type(scope): summary`
+- Per-environment HU branch + PR to that environment (`hu-xxx-dev -> develop`, ...)
+- Testable acceptance criteria
+- Tests added/updated (unit / integration)
+- DDD / hexagonal boundaries respected (domain has no I/O)
+- No secrets; config via environment variables
 
 ## 6. Evidence links
-- Product brief: [`prd.md`](./prd.md) - PRJ-FERRETERIA-V13 (context, needs, current process, open questions, glossary).
-- Repository structure commit: https://github.com/code-corhuila/sistemas-distribuidos-2026-b-g1/commit/b4ae1cc
-- Course learning material (OVAs): https://code-corhuila.github.io/ova-web/2026-B/distribuidos/
-- Session summary used for the architectural decision - vector source: [`resumen_sistemas_distribuidos_semana_2.svg`](./resumen_sistemas_distribuidos_semana_2.svg)
 
-![Distributed Systems - Week 2 summary: distributed architectures, architectural decision, ADR and backlog](./resumen_sistemas_distribuidos_semana_2_preview.png)
-
-Key principle taken from the material: **split for a reason, not for fashion** - a good architecture makes boundaries, contracts, trade-offs and the motive of the decision explicit.
+- [Commit — docs: add part 3 of PDR](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/1d3fedb1b77b8124597671d0bcc83e6ef23d7551)
