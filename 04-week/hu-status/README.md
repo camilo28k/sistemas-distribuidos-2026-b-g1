@@ -20,49 +20,85 @@
 | DOC-04 | Document the Hexagonal Architecture and Architecture Decision Records | done | [Commit — docs(architecture): add hexagonal architecture and ADRs](https://github.com/code-corhuila/dlc-docs/commit/929f9534864047a19a276f63e6d9b81a5bdad241) |
 | MVP-01 | Redesign the authentication login and password recovery views | done | [Commit — feat(auth): redesign login and recovery views](https://github.com/DanielPerez1822/di-lucca-mvp/commit/c127204126b603c0104b08c40546e01f2fccbd7f) |
 | MVP-02 | Dockerize the Di Lucca MVP stack | done | [Commit — feat: dockerize Di Lucca stack](https://github.com/DanielPerez1822/di-lucca-mvp/commit/21a38a7090114a1cebe7a11ae8d81ebed9ceeca4) |
+| DOC-05 | Document Week 04 class sessions through summaries and diagrams | done | [Commit — docs: add Week 4 diagrams and class summaries](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/97a639e) |
 
 ## 2. My individual contribution
 
-- I contributed to the requirements documentation by adding the User Story templates used to standardize the definition of project requirements.
-- I documented the Non-Functional Requirements (NFRs) and created the requirements traceability matrix to establish relationships between requirements and the project artifacts.
-- I contributed to defining the approved MVP User Stories that establish the functionality committed for the first implementation stage.
-- I documented the Hexagonal Architecture and Architecture Decision Records (ADRs), establishing the architectural decisions and the separation between domain logic and external infrastructure.
-- I contributed directly to the MVP implementation through the redesign of the authentication experience.
-- I redesigned the **login and password recovery views** of the authentication module.
-- I added and updated the visual resources required by the authentication and welcome interfaces, including the authentication background, Di Lucca logos, and welcome screen resources. :contentReference[oaicite:2]{index=2}
-- I updated the Angular routes to include the welcome view and maintain the authentication navigation flow. :contentReference[oaicite:3]{index=3}
-- I contributed to making the MVP executable as a distributed stack using Docker.
-- I dockerized the main MVP components, including the Angular frontend, Spring Boot backend, and PostgreSQL database. :contentReference[oaicite:4]{index=4}
-- I created the Docker configuration for the backend and frontend and configured Docker Compose to orchestrate the application services. :contentReference[oaicite:5]{index=5}
-- I configured environment variables for database credentials, JWT secrets, ports, CORS, and optional mail configuration instead of keeping those values directly in the application configuration. :contentReference[oaicite:6]{index=6}
-- I configured the backend health endpoint and the Docker service dependencies so the frontend can wait for the backend service to become healthy. :contentReference[oaicite:7]{index=7}
-- I contributed to the integration of the authentication and deployment work with the existing OdontoSys/Di Lucca MVP structure.
+During Week 04, I contributed to the requirements and architecture documentation and also participated directly in the implementation and deployment of the Di Lucca MVP.
+
+### Requirements and architecture documentation
+
+- Added the User Story templates used to standardize the definition and documentation of project requirements.
+- Documented the **Non-Functional Requirements (NFRs)** and contributed to the requirements traceability matrix.
+- Defined and documented the approved MVP User Stories for the first implementation stage.
+- Documented the **Hexagonal Architecture** and the corresponding **Architecture Decision Records (ADRs)**.
+- Contributed to maintaining consistency between the requirements, architectural decisions, and the planned MVP implementation.
+
+### Authentication interface
+
+- Redesigned the authentication **login** view.
+- Redesigned the **password recovery** view.
+- Added and updated the visual resources required by the authentication and welcome interfaces, including the authentication background, Di Lucca logos, and welcome screen assets.
+- Updated the Angular routes to include the welcome view and maintain the authentication navigation flow.
+
+### Docker and MVP deployment
+
+- Contributed to making the MVP executable as a distributed application stack using Docker.
+- Dockerized the main MVP components:
+  - Angular frontend
+  - Spring Boot backend
+  - PostgreSQL database
+- Created Docker configuration for the frontend and backend.
+- Configured Docker Compose to orchestrate the application services.
+- Configured environment-based settings for database credentials, JWT secrets, ports, CORS, and optional mail configuration.
+- Avoided keeping application secrets directly in the source configuration and provided environment-based configuration through the Docker setup.
+- Configured the backend health endpoint and service dependencies so that the application stack can coordinate service startup.
+- Contributed to the integration of the authentication and deployment changes with the existing Di Lucca MVP structure.
+
+### Week 04 class documentation
+
+- Documented the Week 04 class sessions through summaries and diagrams.
+- Added the Session 1 and Session 2 diagrams.
+- Added the corresponding class summaries as supporting documentation for the concepts studied during the week.
+
+### Main evidence
+
+- `c2db297` — `docs(requirements): add hu templates`
+- `a079407` — `docs(requirements): add NFRs and traceability matrix`
+- `846babc` — `docs(requirements): define approved MVP user stories`
+- `929f953` — `docs(architecture): add hexagonal architecture and ADRs`
+- `c127204` — `feat(auth): redesign login and recovery views`
+- `21a38a` — `feat: dockerize Di Lucca stack`
+- `97a639e` — `docs: add Week 4 diagrams and class summaries`
+
+All of these contributions were documented using Conventional Commits.
 
 ## 3. Blockers and risks
 
 - Some architectural decisions may still require validation as the MVP implementation continues.
-- The MVP currently represents an initial implementation and may require further integration between the documented architecture and the implemented services.
+- The MVP represents an initial implementation and may require further integration between the documented architecture and implemented functionality.
 - Authentication and authorization functionality may require additional validation against the approved User Stories and acceptance criteria.
-- The Docker environment depends on correct configuration of environment variables and local infrastructure.
-- Some requirements and architecture decisions may continue to evolve as implementation exposes new technical constraints.
+- The Docker environment depends on the correct configuration of environment variables and local infrastructure.
+- Requirements and architectural decisions may continue to evolve as implementation exposes new technical constraints.
+- The requirements traceability matrix must remain synchronized with changes to the MVP implementation.
 
 ## 4. Plan for next week
 
 - Continue implementing and validating the approved MVP User Stories.
-- Continue integrating the authentication functionality with the rest of the MVP.
-- Validate the Dockerized environment and the communication between the frontend, backend, and database.
+- Continue integrating and validating the authentication functionality.
+- Validate the Dockerized environment and communication between the frontend, backend, and database.
 - Continue aligning the implementation with the documented Hexagonal Architecture and ADRs.
-- Review the requirements traceability matrix as implementation progresses.
-- Keep the requirements, architecture, and implementation documentation synchronized.
+- Review and update the requirements traceability matrix as implementation progresses.
+- Keep requirements, architecture, and implementation documentation synchronized.
 
 ## 5. Compliance self-check
 
-- Conventional Commits - `type(scope): summary`
-- Per-environment HU branch + PR to that environment (`hu-xxx-dev -> develop`, ...)
-- Testable acceptance criteria
-- Tests added/updated (unit / integration)
-- DDD / hexagonal boundaries respected (domain has no I/O)
-- No secrets; config via environment variables
+- [x] Conventional Commits used for my commits.
+- [ ] Per-environment HU branch and PR to the corresponding environment — no PR evidence is included in this report.
+- [ ] Testable acceptance criteria — acceptance criteria are defined in the project requirements documentation, but this report does not provide separate implementation-level evidence for each criterion.
+- [ ] Tests added/updated — no test-specific commit or test execution evidence is included in this report.
+- [x] Hexagonal Architecture was documented and considered in the architectural contribution.
+- [x] No secrets were committed; environment-based configuration was used for sensitive application settings.
 
 ## 6. Evidence links
 
@@ -77,4 +113,7 @@
 
 - [Commit — feat(auth): redesign login and recovery views](https://github.com/DanielPerez1822/di-lucca-mvp/commit/c127204126b603c0104b08c40546e01f2fccbd7f)
 - [Commit — feat: dockerize Di Lucca stack](https://github.com/DanielPerez1822/di-lucca-mvp/commit/21a38a7090114a1cebe7a11ae8d81ebed9ceeca4)
-- [Di Lucca MVP repository](https://github.com/DanielPerez1822/di-lucca-mvp)
+
+### Week 04 class documentation
+
+- [Commit — docs: add Week 4 diagrams and class summaries](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/97a639e)
