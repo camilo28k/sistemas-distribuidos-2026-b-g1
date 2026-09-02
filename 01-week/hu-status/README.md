@@ -7,7 +7,7 @@
 
 - FULL_NAME: Harold Camilo Barrera Giraldo
 - GITHUB_USER: camilo28k
-- TEAM: [TEAM NAME]
+- TEAM: OdontoSys
 - SPRINT_GOAL: Contribute to the initial project documentation and define the authentication and security foundation for OdontoSys.
 
 ## 1. User stories worked this week
