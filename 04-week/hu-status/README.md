@@ -7,7 +7,7 @@
 
 - FULL_NAME: Harold Camilo Barrera Giraldo
 - GITHUB_USER: camilo28k
-- TEAM: OdontoSys
+- TEAM: Di Lucca
 - SPRINT_GOAL: Finalize the requirements and architecture documentation and contribute to the MVP implementation through authentication interface improvements and Docker-based deployment of the Di Lucca stack.
 
 ## 1. User stories worked this week
@@ -24,7 +24,13 @@
 
 ## 2. My individual contribution
 
-During Week 04, I contributed to the requirements and architecture documentation and also participated directly in the implementation and deployment of the Di Lucca MVP.
+During Week 04, I contributed to the requirements and architecture documentation and also participated directly in the implementation and deployment of the **Di Lucca MVP**.
+
+### Project name transition
+
+- During the evolution of the project, the platform name was changed from **OdontoSys** to **Di Lucca**.
+- The change was made because the name **OdontoSys** was already associated with an existing platform.
+- From Week 04 onward, the project documentation and MVP implementation use **Di Lucca** as the project name.
 
 ### Requirements and architecture documentation
 
@@ -81,6 +87,7 @@ All of these contributions were documented using Conventional Commits.
 - The Docker environment depends on the correct configuration of environment variables and local infrastructure.
 - Requirements and architectural decisions may continue to evolve as implementation exposes new technical constraints.
 - The requirements traceability matrix must remain synchronized with changes to the MVP implementation.
+- The project documentation must consistently use **Di Lucca** after the project name transition.
 
 ## 4. Plan for next week
 
@@ -90,6 +97,7 @@ All of these contributions were documented using Conventional Commits.
 - Continue aligning the implementation with the documented Hexagonal Architecture and ADRs.
 - Review and update the requirements traceability matrix as implementation progresses.
 - Keep requirements, architecture, and implementation documentation synchronized.
+- Maintain **Di Lucca** as the official project name in new documentation and implementation artifacts.
 
 ## 5. Compliance self-check
 
