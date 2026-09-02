@@ -1,71 +1,82 @@
-<!-- PLANTILLA HU-STATUS (traduccion al espanol) - NO borres los marcadores <!-- ... -->
-     ni las cabeceras de tabla.
-     ATENCION: la nota semanal se lee AUTOMATICAMENTE del archivo en ingles:
-       01-week/hu-status/README.md  (dentro de TU fork).
-     Este archivo es una copia en espanol para lectura y no se califica. -->
+<!--
+ Your weekly grade is read AUTOMATICALLY from this file:
+   01-week/hu-status/README.md  (inside YOUR fork). English.
+-->
 
-# Estado Semanal - Semana 01
+# Weekly Status - Week 01
 
-<!-- CONFIG-START - debe coincidir con el CONFIG de tu repo de perfil (username/username) -->
-- FULL_NAME: Jesus Ariel Gonzalez Bonilla
-- GITHUB_USER: ariel5253
-- TEAM: Grupo 1 - PRJ-FERRETERIA-V13
-- SPRINT_GOAL: Convertir el brief de control de dinero de la ferreteria en un mapa de contextos acotados, un ADR para el estilo arquitectonico y un backlog verificable de historias de ingresos, egresos y resumenes.
-<!-- CONFIG-END -->
+- FULL_NAME: Harold Camilo Barrera Giraldo
+- GITHUB_USER: camilo28k
+- TEAM: OdontoSys
+- SPRINT_GOAL: Contribute to the initial project documentation and define the authentication and security foundation for OdontoSys.
 
-## 1. Historias de usuario trabajadas esta semana
-| HU ID | Titulo | Estado (todo/doing/done) | Evidencia (URL de PR o commit) |
+## 1. User stories worked this week
+
+| HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-FIN-001 | Registrar un ingreso con fecha, categoria, valor y nota opcional | doing | https://github.com/code-corhuila/sistemas-distribuidos-2026-b-g1/commit/b4ae1cc |
-| HU-FIN-002 | Registrar un egreso con fecha, categoria, valor y nota opcional | todo | Pendiente - rama hu-fin-002-dev aun no creada |
-| HU-FIN-003 | Consultar un resumen por periodo (dia/semana/mes) con total de ingresos, total de egresos y saldo neto | doing | https://github.com/code-corhuila/sistemas-distribuidos-2026-b-g1/commit/b4ae1cc |
-| HU-FIN-004 | Administrar las categorias de ingreso y egreso para clasificar cada movimiento | todo | Pendiente - rama hu-fin-004-dev aun no creada |
-| HU-FIN-005 | Listar el detalle de movimientos de un periodo para conciliar un saldo que no cuadra | todo | Pendiente - rama hu-fin-005-dev aun no creada |
+| HU-00 | Document Part 3 of the PDR, with a focus on authentication and security | done | [Commit — docs: add part 3 of PDR](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/1d3fedb1b77b8124597671d0bcc83e6ef23d7551) |
+| HU-00 | Document the authentication and security foundation | done | [Commit — docs: add part 3 of PDR: authentication and security](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/462fdb9) |
+| HU-00 | Update authentication documentation and diagrams to English | done | [Commit — docs: update English documentation and diagrams](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/59d2029) |
 
-## 2. Mi contribucion individual
-- Escribi el product brief (`prd.md`) de PRJ-FERRETERIA-V13: contexto inicial, necesidades y problemas, proceso actual, preguntas abiertas y glosario de negocio (ingreso, egreso, saldo neto, corte diario, periodo, categoria).
-- Fije el stack declarado y sus limites: Angular en el frontend, Go en el backend y MySQL como base de datos. Deje el producto explicitamente **fuera** de POS, facturacion, inventario por producto y ERP: el entregable es unicamente control financiero agregado.
-- Derive el primer backlog (HU-FIN-001 .. HU-FIN-005) a partir de la seccion de necesidades y problemas, de modo que cada historia se pueda rastrear hasta una necesidad de negocio declarada y no a una suposicion tecnica.
-- Apliqué el material de la Sesion de Semana 2 (ver el resumen mas abajo): elabore primero el **context map** - un unico contexto acotado `Finanzas` que es dueno de movimientos, categorias y resumenes por periodo - antes de proponer cualquier frontera de servicio.
-- Inicie el **ADR-001 (estilo arquitectonico)**: contexto = un solo administrador, volumen bajo de transacciones, consultas agregadas diarias/semanales/mensuales; decision = monolito modular en Go con contrato REST para Angular; alternativas rechazadas = microservicios (no existe necesidad real de escala ni de despliegue independiente) y event-driven (no hay integracion asincrona en el alcance); consecuencias = operacion mas simple ahora y un unico punto de extraccion mas adelante si el reporteo crece.
-- Apliqué la regla de extraccion de microservicios vista en clase (frontera real **+** necesidad real de escala/despliegue). Hoy no se cumple ninguna de las dos, asi que la decision queda documentada como "monolito modular bien disenado" y no como un monolito distribuido con base de datos compartida.
-- Bosqueje el capeado hexagonal del lado Go: `domain` (Movimiento, Categoria, Periodo y el calculo de saldo neto) sin I/O, `application` (casos de uso) e `infrastructure` (repositorio MySQL y handlers HTTP).
+## 2. My individual contribution
 
-## 3. Bloqueos y riesgos
-- **Las preguntas abiertas del brief siguen sin respuesta** y bloquean los criterios de aceptacion: catalogo inicial de categorias, usuario unico o varios usuarios, si el corte diario bloquea ediciones posteriores, si los movimientos se pueden editar o anular, exportacion a CSV/PDF y si el saldo neto es solo por periodo o tambien acumulado.
-- Las respuestas sobre editar/anular y sobre el corte diario cambian el modelo de dominio de forma directa (libro inmutable con asientos de reversion frente a filas mutables), por lo que HU-FIN-001 y HU-FIN-002 no se pueden cerrar hasta decidirlo.
-- El nivel de seguridad de acceso al sistema no esta definido; sin eso no puedo dimensionar la historia de autenticacion ni decidir si pertenece al Corte 1.
-- Todavia no existen las ramas de entorno (`develop`, `qa`) en el repositorio, por lo que esta semana no se pudo ejercitar el flujo de rama HU + PR por entorno: solo existe `main`.
-- Riesgo de desviacion de alcance hacia un POS: el brief lo descarta, y cada historia nueva debe contrastarse contra ese limite antes de entrar al backlog.
+During Week 01, I contributed to the initial project documentation for **OdontoSys**, with a specific focus on the authentication and security foundation.
 
-## 4. Plan para la proxima semana
-- Cerrar las preguntas abiertas con el interesado y convertir cada respuesta en un criterio de aceptacion.
-- Publicar el `ADR-001` como archivo del repositorio (Contexto / Decision / Alternativas / Consecuencias) siguiendo la plantilla de la sesion.
-- Crear `develop` y `qa`, y luego abrir `hu-fin-001-dev` y `hu-fin-002-dev` con sus PR hacia `develop`.
-- Implementar el dominio `Movimiento` y `Categoria` en Go con pruebas unitarias del calculo de saldo neto, manteniendo el dominio libre de I/O.
-- Definir el esquema MySQL (movimientos, categorias) y el contrato REST que consumira Angular.
-- Construir el endpoint de resumen por periodo (dia/semana/mes) con una prueba de integracion contra MySQL.
+My main contributions were:
 
-## 5. Autoevaluacion de cumplimiento
-- [x] Conventional Commits - `type(scope): summary`
-- [ ] Rama HU + PR por entorno (hu-xxx-dev -> develop, ...)
-- [ ] Criterios de aceptacion verificables
-- [ ] Pruebas agregadas o actualizadas (unitarias / integracion)
-- [ ] Limites DDD / hexagonal respetados (el dominio no tiene I/O)
-- [x] Sin secretos; configuracion por variables de entorno
+- Documented **Part 3 of the Project Definition Report (PDR)** and its technical foundations.
+- Documented the **Auth Service** as a transversal component responsible for identity management and security.
+- Defined the main responsibilities of the Auth Service, including:
+  - User registration
+  - Login
+  - JWT generation and validation
+  - Refresh tokens
+  - Role and permission management
+  - Multi-Factor Authentication (MFA)
+  - Session management
+  - Device management
+  - Access control
+- Documented the initial role model of the system:
+  - Patient
+  - Dentist
+  - Administrator
+- Documented the authorization approach in which authentication is centralized through the Auth Service while each microservice applies authorization to its own resources.
+- Documented security mechanisms considered for the platform, including JWT, refresh tokens, roles and permissions, MFA, session management, device control, rate limiting, auditing, HTTPS, and secure secret management.
+- Documented the authentication micro frontend and its responsibilities for login, registration, password recovery, and MFA.
+- Updated the authentication and security documentation and diagrams to English to maintain consistency with the project documentation standards.
 
-Notas sobre los items sin marcar:
-- Hasta ahora solo existe `main`, por lo que no se pudo abrir ninguna rama HU ni PR hacia `develop`.
-- Los criterios de aceptacion siguen en borrador hasta responder las preguntas abiertas de la seccion 3.
-- Esta semana no se escribio codigo de produccion, asi que todavia no hay nada que probar.
-- El capeado hexagonal esta disenado pero aun no materializado en codigo.
+### Main evidence
 
-## 6. Enlaces de evidencia
-- Product brief: [`prd.md`](./prd.md) - PRJ-FERRETERIA-V13 (contexto, necesidades, proceso actual, preguntas abiertas y glosario).
-- Commit de estructura del repositorio: https://github.com/code-corhuila/sistemas-distribuidos-2026-b-g1/commit/b4ae1cc
-- Material de aprendizaje del curso (OVAs): https://code-corhuila.github.io/ova-web/2026-B/distribuidos/
-- Resumen de la sesion usado para la decision arquitectonica - fuente vectorial: [`resumen_sistemas_distribuidos_semana_2.svg`](./resumen_sistemas_distribuidos_semana_2.svg)
+- `1d3fedb` — `docs: add part 3 of PDR`
+- `462fdb9` — `docs: add part 3 of PDR: authentication and security`
+- `59d2029` — `docs: update English documentation and diagrams`
 
-![Sistemas Distribuidos - Resumen Semana 2: arquitecturas distribuidas, decision arquitectonica, ADR y backlog](./resumen_sistemas_distribuidos_semana_2_preview.png)
+## 3. Blockers and risks
 
-Principio clave tomado del material: **dividir por una razon, no por moda**. Una buena arquitectura hace explicitos los limites, los contratos, los trade-offs y el motivo de la decision.
+- Some project requirements and architectural decisions were still being defined during the initial documentation stage.
+- The final implementation details for authentication, authorization, MFA, sessions, and device management still needed to be validated during development.
+- The final repository organization and deployment configuration were still subject to change.
+- The role and permission model needed to remain consistent between the Auth Service and the individual microservices.
+
+## 4. Plan for next week
+
+- Continue refining the PDR as the project requirements and architecture evolve.
+- Continue defining authentication and authorization flows.
+- Detail how JWT, roles, permissions, and security controls will integrate with the microservices.
+- Keep the documentation aligned with the implementation decisions made by the team.
+- Continue contributing to the distributed architecture and microservice documentation.
+
+## 5. Compliance self-check
+
+- [x] Conventional Commits used for my commits.
+- [ ] Per-environment HU branch and PR to the corresponding environment — no PR evidence is included in this report.
+- [ ] Testable acceptance criteria — not applicable to the documentation work reported here.
+- [ ] Tests added/updated — no test implementation was part of this contribution.
+- [ ] DDD / hexagonal boundaries respected — this week's contribution focused on project documentation rather than implementation.
+- [x] No secrets were added to the documentation.
+
+## 6. Evidence links
+
+- [Commit — docs: add part 3 of PDR](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/1d3fedb1b77b8124597671d0bcc83e6ef23d7551)
+- [Commit — docs: add part 3 of PDR: authentication and security](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/462fdb9)
+- [Commit — docs: update English documentation and diagrams](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/59d2029)
