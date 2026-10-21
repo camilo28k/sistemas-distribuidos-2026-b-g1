@@ -6,7 +6,7 @@
 - TEAM: Di Lucca
 - DOCS_REPO: https://github.com/code-corhuila/dlc-docs
 - REFLECTION_DOC: https://docs.google.com/document/d/1BlAX8AtOa5-qsU91NF9cehHBdqza1EMEZRU_DtC6y_U/edit
-- JOURNEY:
+- JOURNEY: Administrator registers a staff account through api-gateway and auth-service; UserRegistered is published through the Auth outbox.
 <!-- CONFIG-END -->
 
 ## Project scope
