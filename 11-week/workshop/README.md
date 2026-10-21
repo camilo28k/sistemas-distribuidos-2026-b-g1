@@ -5,7 +5,7 @@
 - GITHUB_USER: camilo28k
 - TEAM: Di Lucca
 - DOCS_REPO: https://github.com/code-corhuila/dlc-docs
-- REFLECTION_DOC: Pending personal Google Docs URL before the CP0 push.
+- REFLECTION_DOC: https://docs.google.com/document/d/1BlAX8AtOa5-qsU91NF9cehHBdqza1EMEZRU_DtC6y_U/edit
 - JOURNEY:
 <!-- CONFIG-END -->
 
