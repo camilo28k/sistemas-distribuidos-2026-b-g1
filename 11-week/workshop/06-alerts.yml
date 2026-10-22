@@ -1,0 +1,52 @@
+groups:
+  - name: dilucca-staff-registration-availability
+    interval: 1m
+    rules:
+      - alert: DiLuccaStaffRegistrationFastBurn
+        expr: |
+          (
+            sum(rate(dilucca_gateway_requests_total{environment="prod",job="api-gateway",route="/api/v1/auth/register",method="POST",outcome="error"}[1h]))
+            /
+            sum(rate(dilucca_gateway_requests_total{environment="prod",job="api-gateway",route="/api/v1/auth/register",method="POST"}[1h]))
+            > (14.4 * 0.001)
+          )
+          and
+          (
+            sum(rate(dilucca_gateway_requests_total{environment="prod",job="api-gateway",route="/api/v1/auth/register",method="POST",outcome="error"}[5m]))
+            /
+            sum(rate(dilucca_gateway_requests_total{environment="prod",job="api-gateway",route="/api/v1/auth/register",method="POST"}[5m]))
+            > (14.4 * 0.001)
+          )
+        labels:
+          severity: critical
+          team: di-lucca
+          service: api-gateway
+          environment: prod
+        annotations:
+          summary: "Staff registration error ratio exceeds 1.44% in both 1h and 5m windows"
+          description: "Gateway errors include Auth timeouts. Inspect the request trace before retrying a potentially committed User registration."
+          runbook_url: "https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/blob/main/11-week/workshop/07-runbook.md"
+      - alert: DiLuccaStaffRegistrationSlowBurn
+        expr: |
+          (
+            sum(rate(dilucca_gateway_requests_total{environment="prod",job="api-gateway",route="/api/v1/auth/register",method="POST",outcome="error"}[6h]))
+            /
+            sum(rate(dilucca_gateway_requests_total{environment="prod",job="api-gateway",route="/api/v1/auth/register",method="POST"}[6h]))
+            > (6 * 0.001)
+          )
+          and
+          (
+            sum(rate(dilucca_gateway_requests_total{environment="prod",job="api-gateway",route="/api/v1/auth/register",method="POST",outcome="error"}[30m]))
+            /
+            sum(rate(dilucca_gateway_requests_total{environment="prod",job="api-gateway",route="/api/v1/auth/register",method="POST"}[30m]))
+            > (6 * 0.001)
+          )
+        labels:
+          severity: warning
+          team: di-lucca
+          service: api-gateway
+          environment: prod
+        annotations:
+          summary: "Staff registration error ratio exceeds 0.6% in both 6h and 30m windows"
+          description: "Sustained registration failures consume the IAM availability budget. Review Gateway/Auth errors and the iam dependency."
+          runbook_url: "https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/blob/main/11-week/workshop/07-runbook.md"
