@@ -5,13 +5,11 @@
 - GITHUB_USER: camilo28k
 - TEAM: Di Lucca Dental Care & Technology
 - DOCS_REPO: https://github.com/code-corhuila/dlc-docs
-- TRUST_BOUNDARY: api-gateway -> auth-service (inbound HTTP requests)
+- BOUNDARY: api-gateway -> auth-service (inbound HTTP requests)
 - CLAIM_ISSUE: https://github.com/code-corhuila/dlc-docs/issues/124
 - REFLECTION_DOC: https://docs.google.com/document/d/1xmY05LsNzr8W9yD9qynghd0fbPk-5RePA2aXGYyd3Pg/edit
 - LIBRARY_BOOK: Seguridad de la informacion; Enrique Daltabuit, Leobardo Hernandez, Guillermo Mallen, Jose de Jesus Vazquez. Edition, year, shelf mark, chapter and pages pending confirmation from the student's physical copy.
 - LIBRARY_RECORD_TIME: Pending confirmation of the actual library visit or loan record.
-- STRIDE_PR: Pending CP2.
-- STORIES: Pending CP3.
 <!-- CONFIG-END -->
 
 ## CP0 scope
@@ -43,8 +41,8 @@ run or that the distributed request path has been deployed.
   the recorded visit time and the passages used still require confirmation.
 - The reflection URL was supplied by the student. Document contents, CP0 entry
   and teacher Editor access have not been verified.
-- CONFIG field names above are provisional: the Spanish guide refers to an
-  English template that was not supplied. Reconcile them with that template.
+- CONFIG follows the supplied English CP0 template. LIBRARY_RECORD_TIME is
+  completed in CP2 with the actual library record time; STORIES is added in CP3.
 - This is a CP0 preparation increment. CP0 is not fully verified while these
   requirements remain pending. No CP1-CP9 deliverables are included.
 
