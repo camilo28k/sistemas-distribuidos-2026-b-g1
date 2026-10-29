@@ -8,8 +8,8 @@
 - BOUNDARY: api-gateway -> auth-service (inbound HTTP requests)
 - CLAIM_ISSUE: https://github.com/code-corhuila/dlc-docs/issues/124
 - REFLECTION_DOC: https://docs.google.com/document/d/1xmY05LsNzr8W9yD9qynghd0fbPk-5RePA2aXGYyd3Pg/edit
-- LIBRARY_BOOK: Seguridad de la informacion; Enrique Daltabuit, Leobardo Hernandez, Guillermo Mallen, Jose de Jesus Vazquez. Edition, year, shelf mark, chapter and pages pending confirmation from the student's physical copy.
-- LIBRARY_RECORD_TIME: Pending confirmation of the actual library visit or loan record.
+- LIBRARY_BOOK: Enrique Daltabuit Godás, Leobardo Hernández Audelo, Guillermo Mallén Fullerton, José de Jesús Vázquez Gómez. La seguridad de la información. Mexico: Limusa / Grupo Noriega Editores, 2007. ISBN 978-968-18-6935-9. First edition. CORHUILA library call number: 005.8. Book identifier: 0006115. Consulted pages reported by the student: 350-351, 383-384, 436-437 and 502.
+- LIBRARY_RECORD_TIME: 2026-10-28 18:58 America/Bogota (physical visit time confirmed by the student; institutional visit/loan record not independently inspected).
 <!-- CONFIG-END -->
 
 ## CP0 scope
@@ -37,14 +37,34 @@ run or that the distributed request path has been deployed.
 ## Preparation status
 
 - The boundary was claimed through issue #124 on October 28, 2026.
-- The student reports consulting a physical library book. Bibliographic details,
-  the recorded visit time and the passages used still require confirmation.
-- The reflection URL was supplied by the student. Document contents, CP0 entry
-  and teacher Editor access have not been verified.
-- CONFIG follows the supplied English CP0 template. LIBRARY_RECORD_TIME is
-  completed in CP2 with the actual library record time; STORIES is added in CP3.
+- The student confirms a physical CORHUILA library visit at 18:58 and the page
+  references below, first edition and library call number 005.8.
+  Online bibliographic metadata does not substitute for that physical visit.
+- The supplied screenshots show the reflection document and teacher Editor
+  access for jesus.gonzalez@corhuila.edu.co. The personal CP0 entry remains unverified.
+- CONFIG follows the supplied English CP0 template. LIBRARY_RECORD_TIME has
+  been recorded for CP2; STORIES will be added in CP3.
 - This is a CP0 preparation increment. CP0 is not fully verified while these
   requirements remain pending. No CP1-CP9 deliverables are included.
+
+## Physical book consultation notes
+
+The student confirmed the following page/topic mappings from the physical book.
+These notes identify sources for later checkpoints; they are not completed
+STRIDE rows or security stories, and do not reproduce the book's text.
+
+| Pages | Topic reported by the student | Intended project application |
+|---|---|---|
+| 350-351 | Identification and authentication | CP2: identity spoofing across the Gateway-to-Auth boundary |
+| 383-384 | Authenticators and access control | CP3: acceptance criteria for IAM authorization |
+| 436-437 | Logs and log analysis | CP2: repudiation and auditability of IAM operations |
+| 502 | Denial-of-service attacks | CP2: availability risks at the Auth entry boundary |
+
+Later analysis will mark book-supported threats or mitigations with [B] and
+cite the relevant pages. At least one CP3 acceptance criterion will cite the
+physical book. Specific controls and thresholds must be justified by Di Lucca
+requirements or code; they must not be attributed to these pages without
+checking the corresponding passage. No direct quotation is asserted here.
 
 ## Delivery boundaries
 
