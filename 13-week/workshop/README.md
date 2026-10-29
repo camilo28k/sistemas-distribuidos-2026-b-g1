@@ -10,6 +10,7 @@
 - REFLECTION_DOC: https://docs.google.com/document/d/1xmY05LsNzr8W9yD9qynghd0fbPk-5RePA2aXGYyd3Pg/edit
 - LIBRARY_BOOK: Enrique Daltabuit Godás, Leobardo Hernández Audelo, Guillermo Mallén Fullerton, José de Jesús Vázquez Gómez. La seguridad de la información. Mexico: Limusa / Grupo Noriega Editores, 2007. ISBN 978-968-18-6935-9. First edition. CORHUILA library call number: 005.8. Book identifier: 0006115. Consulted pages reported by the student: 350-351, 383-384, 436-437 and 502.
 - LIBRARY_RECORD_TIME: 2026-10-28 18:58 America/Bogota (physical visit time confirmed by the student; institutional visit/loan record not independently inspected).
+- STORIES: https://github.com/code-corhuila/dlc-docs/issues/126, https://github.com/code-corhuila/dlc-docs/issues/127, https://github.com/code-corhuila/dlc-docs/issues/128
 <!-- CONFIG-END -->
 
 ## CP0 scope
@@ -72,6 +73,19 @@ The individual fork holds the attack-surface map, proposed security CI and
 weekly status. STRIDE belongs in a separate branch and open PR in `dlc-docs`;
 the security stories belong in that repository and the team's Project.
 The student's personal reflection remains in Google Docs.
+
+## CP3 security backlog
+
+Three P1 stories with risk score 6 are published in `dlc-docs`: [S-01 forged
+identity](https://github.com/code-corhuila/dlc-docs/issues/126), [I-01 response
+disclosure](https://github.com/code-corhuila/dlc-docs/issues/127), and [E-01
+privilege escalation](https://github.com/code-corhuila/dlc-docs/issues/128).
+Each issue has `security` and `P1` labels, verifiable acceptance criteria and
+an automated test criterion. E-01 cites the physical book at pp. 383-384.
+All three refer to the [STRIDE analysis PR](https://github.com/code-corhuila/dlc-docs/pull/125).
+T-01 remains P1 in that analysis; Gateway transport implementation is pending.
+Project 21 membership is pending verification because the available GitHub token
+has repository access but lacks `read:project` and `project` scopes.
 
 The scheduled CP0 interval was 18:30-18:40 America/Bogota on October 28.
 This preparation occurred after that interval; actual GitHub timestamps remain
