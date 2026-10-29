@@ -84,8 +84,8 @@ Each issue has `security` and `P1` labels, verifiable acceptance criteria and
 an automated test criterion. E-01 cites the physical book at pp. 383-384.
 All three refer to the [STRIDE analysis PR](https://github.com/code-corhuila/dlc-docs/pull/125).
 T-01 remains P1 in that analysis; Gateway transport implementation is pending.
-Project 21 membership is pending verification because the available GitHub token
-has repository access but lacks `read:project` and `project` scopes.
+All three issues are verified in the [Di Lucca Project 21 Backlog](https://github.com/orgs/code-corhuila/projects/21/views/1)
+with Status `Backlog` (checked on October 29, 2026).
 
 The scheduled CP0 interval was 18:30-18:40 America/Bogota on October 28.
 This preparation occurred after that interval; actual GitHub timestamps remain
