@@ -21,15 +21,16 @@
 ## 2. My individual contribution
 - Claimed the inbound `api-gateway` to `auth-service` boundary, mapped its attack surface, and analyzed STRIDE risks to IAM `User` and `Session`.
 - Opened STRIDE PR #125, published three P1 security stories in Project 21 Backlog, and proposed CI gates for `POST /api/v1/auth/staff/{id}/unlocks`.
-- Ran the isolated negative IAM test: 2 tests, 0 failures, 0 errors. Reviewed a teammate's clinical-service STRIDE PR #133 with an inline comment on unverified Gateway header filtering.
+- Addressed the peer comment on STRIDE PR #125, refined issues #126-#128, and reviewed a teammate's clinical-service STRIDE PR #133 with an inline comment on unverified Gateway header filtering.
+- Re-ran the isolated negative IAM test on October 30: 2 tests, 0 failures, 0 errors, and Maven BUILD SUCCESS. Validated the proposed workflow as YAML and recorded both results in HOW-TO-RUN.md.
 
 ## 3. Blockers and risks
 - `dlc-api-gateway` main/develop still contain only README and CODEOWNERS; Gateway header stripping and routed authorization are unverified.
-- PR #125 awaits team review. The security workflow and negative test are published as a fork proposal, not installed in `dlc-iam-api`; its dependency audit needs `NVD_API_KEY`.
+- STRIDE PR #125 requires a team-owned merge decision. The security workflow and negative test are published as a fork proposal, not installed in `dlc-iam-api`; its dependency audit needs `NVD_API_KEY`.
 - The three security stories are backlog items, not implemented fixes. A MockMvc test cannot establish behavior through Gateway or a live IAM database.
 
 ## 4. Plan for next week
-- Seek team review of PR #125 and prioritize issues #126-#128 after the CP6-CP9 take-home work.
+- Seek final team review of PR #125 and prioritize issues #126-#128 in the next sprint.
 - Propose the negative IAM authorization test and security CI gates through an IAM PR after the team agrees on ownership and `NVD_API_KEY`.
 - Add a Gateway-to-Auth routing test when Gateway implementation exists; record evidence before treating header stripping as an active control.
 
@@ -51,5 +52,8 @@
 - CP3 commits: https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/2f7fdb92046cf4ac6247b1c077988d0b8322cc71 ; https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/dd75946880cfbea4336630e326d6ea0ead572caf
 - CP3 stories: https://github.com/code-corhuila/dlc-docs/issues/126 ; https://github.com/code-corhuila/dlc-docs/issues/127 ; https://github.com/code-corhuila/dlc-docs/issues/128
 - CP4 commit: https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/2e63115aa08159883208d105cf1418022c9dbc94
+- CP6 STRIDE revision: https://github.com/code-corhuila/dlc-docs/commit/4295401b983e6260ec0421e1ee3de9ad7e8d04c0
+- CP7 backlog refinement: https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/978467ca4dd02e939121d5573248f522359f2c7b
+- CP8 test output and YAML validation: https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/8e982ca526be5256e7b6610248af229844e1d3d5
 - Peer review comment: https://github.com/code-corhuila/dlc-docs/pull/133#discussion_r4418098322
 - Reflection document: https://docs.google.com/document/d/1xmY05LsNzr8W9yD9qynghd0fbPk-5RePA2aXGYyd3Pg/edit
