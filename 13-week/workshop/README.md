@@ -10,7 +10,7 @@
 - REFLECTION_DOC: https://docs.google.com/document/d/1xmY05LsNzr8W9yD9qynghd0fbPk-5RePA2aXGYyd3Pg/edit
 - LIBRARY_BOOK: Enrique Daltabuit Godás, Leobardo Hernández Audelo, Guillermo Mallén Fullerton, José de Jesús Vázquez Gómez. La seguridad de la información. Mexico: Limusa / Grupo Noriega Editores, 2007. ISBN 978-968-18-6935-9. First edition. CORHUILA library call number: 005.8. Book identifier: 0006115. Consulted pages reported by the student: 350-351, 383-384, 436-437 and 502.
 - LIBRARY_RECORD_TIME: 2026-10-28 18:58 America/Bogota (physical visit time confirmed by the student; institutional visit/loan record not independently inspected).
-- STORIES: https://github.com/code-corhuila/dlc-docs/issues/126, https://github.com/code-corhuila/dlc-docs/issues/127, https://github.com/code-corhuila/dlc-docs/issues/128
+- STORIES: https://github.com/code-corhuila/dlc-docs/issues/126 (S-01), https://github.com/code-corhuila/dlc-docs/issues/127 (I-01), https://github.com/code-corhuila/dlc-docs/issues/128 (E-01)
 <!-- CONFIG-END -->
 
 ## CP0 scope
@@ -43,10 +43,10 @@ run or that the distributed request path has been deployed.
   Online bibliographic metadata does not substitute for that physical visit.
 - The supplied screenshots show the reflection document and teacher Editor
   access for jesus.gonzalez@corhuila.edu.co. The personal CP0 entry remains unverified.
-- CONFIG follows the supplied English CP0 template. LIBRARY_RECORD_TIME has
-  been recorded for CP2; STORIES will be added in CP3.
-- This is a CP0 preparation increment. CP0 is not fully verified while these
-  requirements remain pending. No CP1-CP9 deliverables are included.
+- CONFIG follows the supplied English CP0 template. LIBRARY_RECORD_TIME was
+  recorded for CP2; STORIES now points to the refined CP7 backlog issues.
+- CP0 evidence remains traceable; later checkpoint changes have separate
+  commits and links. No reflection entry is asserted here.
 
 ## Physical book consultation notes
 
@@ -86,6 +86,19 @@ All three refer to the [STRIDE analysis PR](https://github.com/code-corhuila/dlc
 T-01 remains P1 in that analysis; Gateway transport implementation is pending.
 All three issues are verified in the [Di Lucca Project 21 Backlog](https://github.com/orgs/code-corhuila/projects/21/views/1)
 with Status `Backlog` (checked on October 29, 2026).
+
+## CP7 backlog refinement
+
+The same three issues remain open at risk 6 / P1 and linked to PR #125.
+S-01 [#126](https://github.com/code-corhuila/dlc-docs/issues/126) now separates
+the passed mocked IAM HTTP tests from pending real-adapter, database and Gateway
+tests; it links related Clinical #138 and Billing #135 without merging their
+owner-service work. I-01 [#127](https://github.com/code-corhuila/dlc-docs/issues/127)
+specifies expected 401/503 error cases and response-secret assertions. E-01
+[#128](https://github.com/code-corhuila/dlc-docs/issues/128) makes the [B]
+acceptance criterion an automated forged-role test, citing the physical book
+at pp. 383-384; it links related Billing #134. All three remain in Project 21
+with Status `Backlog`; issue refinement does not claim implementation.
 
 The scheduled CP0 interval was 18:30-18:40 America/Bogota on October 28.
 This preparation occurred after that interval; actual GitHub timestamps remain
