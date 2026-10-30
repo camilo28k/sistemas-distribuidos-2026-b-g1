@@ -37,3 +37,40 @@ its execution URL must come from a later reviewed IAM PR.
 
 References: [Gitleaks container](https://github.com/gitleaks/gitleaks/pkgs/container/gitleaks),
 [Dependency-Check Maven goal](https://jeremylong.github.io/DependencyCheck/dependency-check-maven/check-mojo.html).
+
+## CP8 local execution (2026-10-30)
+
+The isolated IAM checkout was still at `c133d6aa9877995dd1b988558b039c4eaf2e9dbc`;
+the remote feature branch resolved to the same revision. The copied CP4 test was
+run on Windows with Java 21 and Maven 3.9.16. Because dynamic Mockito agent
+attachment is unavailable here, the command supplied its local JAR explicitly:
+
+```powershell
+$agent = 'C:\Users\hcbar\.m2\repository\org\mockito\mockito-core\5.17.0\mockito-core-5.17.0.jar'
+mvn -B -ntp -pl iam-app -am '-Dtest=ForgedIdentityUnlockTest' '-Dsurefire.failIfNoSpecifiedTests=false' "-DargLine=-javaagent:$agent" test
+```
+
+Console excerpt from the successful run, 17:36:40–17:37:10 Colombia time:
+
+```text
+[INFO] Running co.edu.corhuila.dlc.iam.app.ForgedIdentityUnlockTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.184 s -- in co.edu.corhuila.dlc.iam.app.ForgedIdentityUnlockTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Reactor Summary for dlc-iam-api 0.1.0-SNAPSHOT:
+[INFO] BUILD SUCCESS
+[INFO] Total time:  26.785 s
+```
+
+`security.yml` parsed successfully with PyYAML `BaseLoader`. The local check
+confirmed the `develop` pull-request branch, five security job steps, and
+`permissions.contents: read`:
+
+```text
+YAML parse: PASS
+pull_request branch: develop
+security steps: 5
+permissions.contents: read
+```
+
+This validates YAML structure and the selected fields; it does not execute
+the proposed workflow or prove that its external tools and credentials work.
