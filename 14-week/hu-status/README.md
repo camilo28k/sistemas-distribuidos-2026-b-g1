@@ -8,37 +8,39 @@
 - FULL_NAME: Harold Camilo Barrera Giraldo
 - GITHUB_USER: camilo28k
 - TEAM: Di Lucca
-- SPRINT_GOAL: Promote the validated IAM work to qa, deliver configurable SMTP with branded identity emails, run separate develop, qa and main stages with their own databases, and prepare release 3.0.0 of the IAM repositories for main.
+- SPRINT_GOAL: Complete the IAM API: own sessions, refresh, protected login and logout, staff administration, registration, identity emails, the RabbitMQ outbox and the Patients and Clinical permissions, and integrate it locally with Gateway, Front, Patients and Clinical.
 <!-- CONFIG-END -->
 
 ## 1. User stories worked this week
 | HU ID | Title | Status (todo/doing/done) | Evidence (PR or commit URL) |
 |---|---|---|---|
-| HU-IAM-004 | Branded HTML verification and recovery emails over configurable SMTP; activation link on login | doing | [dlc-iam-api #116](https://github.com/code-corhuila/dlc-iam-api/pull/116), [dlc-iam-api #118](https://github.com/code-corhuila/dlc-iam-api/pull/118), [dlc-iam-portal #68](https://github.com/code-corhuila/dlc-iam-portal/pull/68), [dlc-iam-portal #69](https://github.com/code-corhuila/dlc-iam-portal/pull/69) |
-| HU-IAM-001..006 | Promotion of IAM database and API work to qa | done | [dlc-iam-db #33](https://github.com/code-corhuila/dlc-iam-db/pull/33), [dlc-iam-db #34](https://github.com/code-corhuila/dlc-iam-db/pull/34), [dlc-iam-db #35](https://github.com/code-corhuila/dlc-iam-db/pull/35), [dlc-iam-api #117](https://github.com/code-corhuila/dlc-iam-api/pull/117), [dlc-infra-postgres #7](https://github.com/code-corhuila/dlc-infra-postgres/pull/7), [dlc-infra-postgres #8](https://github.com/code-corhuila/dlc-infra-postgres/pull/8) |
-| Environments | Local develop, qa and main stages with separate databases | done | [dlc-infra #1](https://github.com/code-corhuila/dlc-infra/pull/1), [dlc-infra #17](https://github.com/code-corhuila/dlc-infra/pull/17), [dlc-infra #18](https://github.com/code-corhuila/dlc-infra/pull/18), [dlc-docs #174](https://github.com/code-corhuila/dlc-docs/pull/174) |
-| Release 3.0.0 | IAM release PRs to main (CHANGELOG, cherry-pick trail) | doing | [dlc-iam-api #119](https://github.com/code-corhuila/dlc-iam-api/pull/119), [dlc-iam-db #36](https://github.com/code-corhuila/dlc-iam-db/pull/36), [dlc-iam-portal #70](https://github.com/code-corhuila/dlc-iam-portal/pull/70) |
+| HU-IAM-001 | Staff sign-in: refresh rotation, protected login, CSRF proof, cookie logout and trusted client IP | doing | [dlc-iam-api #34](https://github.com/code-corhuila/dlc-iam-api/pull/34), [dlc-iam-api #35](https://github.com/code-corhuila/dlc-iam-api/pull/35), [dlc-iam-api #36](https://github.com/code-corhuila/dlc-iam-api/pull/36), [dlc-iam-api #37](https://github.com/code-corhuila/dlc-iam-api/pull/37), [dlc-iam-api #38](https://github.com/code-corhuila/dlc-iam-api/pull/38), [dlc-iam-api #39](https://github.com/code-corhuila/dlc-iam-api/pull/39), [dlc-iam-api #40](https://github.com/code-corhuila/dlc-iam-api/pull/40), [dlc-iam-api #41](https://github.com/code-corhuila/dlc-iam-api/pull/41), [dlc-iam-api #42](https://github.com/code-corhuila/dlc-iam-api/pull/42), [dlc-iam-api #81](https://github.com/code-corhuila/dlc-iam-api/pull/81), [dlc-iam-api #82](https://github.com/code-corhuila/dlc-iam-api/pull/82), [dlc-iam-api #87](https://github.com/code-corhuila/dlc-iam-api/pull/87), [dlc-front #114](https://github.com/code-corhuila/dlc-front/pull/114), [dlc-api-gateway #18](https://github.com/code-corhuila/dlc-api-gateway/pull/18) |
+| HU-IAM-002 | Staff role management: atomic role assignment and Patients/Clinical permissions | doing | [dlc-iam-api #47](https://github.com/code-corhuila/dlc-iam-api/pull/47), [dlc-iam-api #48](https://github.com/code-corhuila/dlc-iam-api/pull/48), [dlc-iam-api #83](https://github.com/code-corhuila/dlc-iam-api/pull/83), [dlc-iam-api #84](https://github.com/code-corhuila/dlc-iam-api/pull/84), [dlc-iam-api #85](https://github.com/code-corhuila/dlc-iam-api/pull/85), [dlc-iam-api #86](https://github.com/code-corhuila/dlc-iam-api/pull/86), [dlc-docs #160](https://github.com/code-corhuila/dlc-docs/pull/160), [dlc-docs #161](https://github.com/code-corhuila/dlc-docs/pull/161), [dlc-patient-api #33](https://github.com/code-corhuila/dlc-patient-api/pull/33), [dlc-clinical-api #122](https://github.com/code-corhuila/dlc-clinical-api/pull/122) |
+| HU-IAM-003 | Staff account administration: registration, name updates, enabling and disabling | doing | [dlc-iam-api #43](https://github.com/code-corhuila/dlc-iam-api/pull/43), [dlc-iam-api #44](https://github.com/code-corhuila/dlc-iam-api/pull/44), [dlc-iam-api #50](https://github.com/code-corhuila/dlc-iam-api/pull/50), [dlc-iam-api #51](https://github.com/code-corhuila/dlc-iam-api/pull/51), [dlc-iam-api #52](https://github.com/code-corhuila/dlc-iam-api/pull/52), [dlc-iam-api #54](https://github.com/code-corhuila/dlc-iam-api/pull/54), [dlc-iam-api #55](https://github.com/code-corhuila/dlc-iam-api/pull/55), [dlc-iam-api #56](https://github.com/code-corhuila/dlc-iam-api/pull/56), [dlc-iam-api #57](https://github.com/code-corhuila/dlc-iam-api/pull/57), [dlc-iam-api #58](https://github.com/code-corhuila/dlc-iam-api/pull/58), [dlc-iam-api #59](https://github.com/code-corhuila/dlc-iam-api/pull/59), [dlc-iam-api #60](https://github.com/code-corhuila/dlc-iam-api/pull/60), [dlc-iam-api #62](https://github.com/code-corhuila/dlc-iam-api/pull/62), [dlc-iam-api #63](https://github.com/code-corhuila/dlc-iam-api/pull/63), [dlc-iam-api #64](https://github.com/code-corhuila/dlc-iam-api/pull/64), [dlc-iam-db #26](https://github.com/code-corhuila/dlc-iam-db/pull/26), [dlc-iam-db #27](https://github.com/code-corhuila/dlc-iam-db/pull/27) |
+| HU-IAM-004 | Password recovery and email verification: neutral requests, limits and direct identity emails | doing | [dlc-iam-api #46](https://github.com/code-corhuila/dlc-iam-api/pull/46), [dlc-iam-api #61](https://github.com/code-corhuila/dlc-iam-api/pull/61), [dlc-iam-api #65](https://github.com/code-corhuila/dlc-iam-api/pull/65), [dlc-iam-api #66](https://github.com/code-corhuila/dlc-iam-api/pull/66), [dlc-iam-api #67](https://github.com/code-corhuila/dlc-iam-api/pull/67), [dlc-iam-api #68](https://github.com/code-corhuila/dlc-iam-api/pull/68), [dlc-iam-api #69](https://github.com/code-corhuila/dlc-iam-api/pull/69), [dlc-iam-api #70](https://github.com/code-corhuila/dlc-iam-api/pull/70), [dlc-iam-api #71](https://github.com/code-corhuila/dlc-iam-api/pull/71), [dlc-iam-api #72](https://github.com/code-corhuila/dlc-iam-api/pull/72), [dlc-iam-db #29](https://github.com/code-corhuila/dlc-iam-db/pull/29), [dlc-docs #156](https://github.com/code-corhuila/dlc-docs/pull/156) |
+| HU-IAM-005 | Account-lock protection: audited administrative unlock | doing | [dlc-iam-api #45](https://github.com/code-corhuila/dlc-iam-api/pull/45), [dlc-iam-api #49](https://github.com/code-corhuila/dlc-iam-api/pull/49), [dlc-iam-api #53](https://github.com/code-corhuila/dlc-iam-api/pull/53), [dlc-iam-db #25](https://github.com/code-corhuila/dlc-iam-db/pull/25), [dlc-iam-db #28](https://github.com/code-corhuila/dlc-iam-db/pull/28) |
+| HU-IAM-006 | Own sessions: owner-scoped session listing | doing | [dlc-iam-api #31](https://github.com/code-corhuila/dlc-iam-api/pull/31), [dlc-iam-api #32](https://github.com/code-corhuila/dlc-iam-api/pull/32), [dlc-iam-api #33](https://github.com/code-corhuila/dlc-iam-api/pull/33) |
+| Integration | Outbox to RabbitMQ, runtime image and local integration with Gateway, Front, Patients and Clinical | done | [dlc-iam-api #73](https://github.com/code-corhuila/dlc-iam-api/pull/73), [dlc-iam-api #74](https://github.com/code-corhuila/dlc-iam-api/pull/74), [dlc-iam-api #75](https://github.com/code-corhuila/dlc-iam-api/pull/75), [dlc-iam-api #76](https://github.com/code-corhuila/dlc-iam-api/pull/76), [dlc-iam-api #77](https://github.com/code-corhuila/dlc-iam-api/pull/77), [dlc-iam-api #78](https://github.com/code-corhuila/dlc-iam-api/pull/78), [dlc-iam-api #79](https://github.com/code-corhuila/dlc-iam-api/pull/79), [dlc-iam-api #80](https://github.com/code-corhuila/dlc-iam-api/pull/80), [dlc-iam-db #30](https://github.com/code-corhuila/dlc-iam-db/pull/30), [dlc-iam-portal #67](https://github.com/code-corhuila/dlc-iam-portal/pull/67), [dlc-front #123](https://github.com/code-corhuila/dlc-front/pull/123), [dlc-patient-api #48](https://github.com/code-corhuila/dlc-patient-api/pull/48), [dlc-docs #166](https://github.com/code-corhuila/dlc-docs/pull/166) |
 
-This report covers the week up to 2026-11-14. `dlc-iam-api` #116, `dlc-iam-portal` #68 and `dlc-infra` #1 and #17 were merged into `develop`; the `chore(qa)`/promotion PRs into `qa`; `dlc-docs` #174 into `main`. The release PRs to `main` are open and wait for the required approval from `ariel5253`; the `v3.0.0` tag is applied after their merge. `dlc-iam-api` #117 was merged with no content change because the ADR-020 core was already present in `qa`.
+This report covers 2-8 November. All PRs listed were merged, except `dlc-clinical-api` #123, which was closed without merge after the administrator clinical read was approved by role in `dlc-docs` #161. The stories stay `doing` until they are promoted to `qa` and released.
 
 ## 2. My individual contribution
-- I made the IAM SMTP transport configurable (STARTTLS, implicit SSL, timeouts) with secrets read from the git-ignored `.env`, logged only the provider failure type with the correlation id, and replaced the code emails with branded Spanish HTML + plain-text messages (`dlc-iam-api` #116), promoted to `qa` in #118.
-- In the portal I moved the "Ya tengo un código de verificación" activation link to the login screen and clarified the code wording (`dlc-iam-portal` #68), promoted to `qa` with the Gateway smoke test in #69.
-- I promoted the IAM database migrations (`dlc-iam-db` #33–#35) and the PostgreSQL scaffold, IAM connectivity and owner isolation (`dlc-infra-postgres` #7, #8) to `qa` with `cherry-pick -x` in PRs under 400 lines; after them `qa` matches `develop` in these repositories.
-- In `dlc-infra` I added the GitHub baseline (#1) and the local develop, qa and main stages (#17), promoted to `qa` (#18): each stage is its own Compose project with its own PostgreSQL, MongoDB with TLS, network, ports and generated secrets; Liquibase contexts `dev`/`qa`/`prod` keep the synthetic seed out of `main`. develop and qa run the complete stack; main runs databases only. I documented it in `dlc-docs` #174.
-- I verified the stages with 93 automated checks (healthy engines, migrations, seed per context, each API on its own stage database, admin login per stage with credentials and tokens rejected across stages, isolated data, networks, secrets and CA, cross-domain permissions denied, persistence after restart).
-- I prepared release 3.0.0 of the IAM repositories: `release/3.0.0` branches cut from `main`, filled with `cherry-pick -x` from `qa`, with `CHANGELOG.md` and the full promotion trail (`dlc-iam-api` #119, `dlc-iam-db` #36, `dlc-iam-portal` #70). Local validation: 197 API tests and 186 portal tests passed, portal build succeeded, and each release tree equals `qa`.
+- I implemented owner-scoped own-session listing (`dlc-iam-api` #31–#33), atomic refresh rotation with reuse response, the atomic login IP attempt window, cookie-identified logout, protected staff login, the session-bound CSRF proof and the cookie-protected refresh and logout endpoints (#34–#42).
+- I implemented staff administration: audited name updates, atomic role assignment, audited enabling and disabling with session revocation, administrator-scoped staff reads and the idempotent, audited administrative unlock (#43–#45, #47–#56, #58, #59), with the supporting migrations in `dlc-iam-db` (#25, #26).
+- I implemented administrator staff registration with keyed replay proof and atomic persistence (#57, #60, #62–#64; `dlc-iam-db` #27) and integrated the missing login protection migrations into `develop` (`dlc-iam-db` #28).
+- I defined direct identity email delivery (`dlc-docs` #156) and implemented neutral password recovery requests, replacement challenges, shared request limits, verification requests, the initial staff verification challenge and the direct TLS email adapter (#61, #65–#72; `dlc-iam-db` #29), and verified password reset atomicity in PostgreSQL (#46).
+- I implemented the confirmed transactional outbox with bounded delivery to RabbitMQ and its PostgreSQL-to-RabbitMQ test (#73–#76; `dlc-iam-db` #30), packaged a non-root runtime image and a stage-scoped Compose runtime (#77, #78), fixed JDBC repository proxies (#79) and recorded the shared PostgreSQL develop integration (#80).
+- I restricted the client IP to the trusted Gateway address (#81, #82, #87; `dlc-api-gateway` #18), defined and issued the Patients and Clinical JWT permissions and the administrator clinical read by role (`dlc-docs` #160, #161; #83–#86; `dlc-patient-api` #33; `dlc-clinical-api` #122), fixed the logout body in `dlc-front` (#114) and recorded the local IAM, Patients and Clinical integration (`dlc-iam-portal` #67, `dlc-front` #123, `dlc-patient-api` #48, `dlc-docs` #166).
 
 ## 3. Blockers and risks
-- The release PRs require the teacher's approval before merge and tagging.
-- GitHub Actions does not run because of the organization billing lock; CI steps were reproduced locally.
-- The stages run on a developer machine; shared hosting of develop, qa and main is pending.
-- Other domains (Appointments, Billing) still have work in `develop` that is not in `qa`, which affects the full-system release.
+- All this work is in `develop`; it still has to be promoted to `qa` with cherry-pick PRs under 400 lines.
+- The local integration runs on a developer machine; shared environments for develop, qa and main are not yet defined.
+- The identity email adapter needs a real SMTP provider configuration to deliver codes outside local tests.
 
 ## 4. Plan for next week
-- Merge the IAM release PRs once approved and tag `v3.0.0` on `main`.
-- Address the open security stories (#126–#128) and the IAM observability gaps (structured logs, metrics, traces).
-- Support the team in the end-to-end demo of MVP 3.
+- Promote the IAM database, API and portal work to `qa`.
+- Make the SMTP transport configurable and replace the code emails with branded messages.
+- Run separate develop, qa and main stages with their own databases and prepare release 3.0.0 of the IAM repositories.
 
 ## 5. Compliance self-check
 - [x] Conventional Commits - `type(scope): summary`
@@ -48,42 +50,106 @@ This report covers the week up to 2026-11-14. `dlc-iam-api` #116, `dlc-iam-porta
 - [x] DDD / hexagonal boundaries respected (domain has no I/O)
 - [x] No secrets; config via environment variables
 
-PR titles follow Conventional Commits. Promotion follows the team convention (`promotion/*` → qa, `release/*` → main) instead of `hu-xxx-*`. The email sender tests were updated and the API and portal suites were run locally. SMTP secrets moved to the git-ignored `.env`; `.env.example` and the stage env files contain no secrets. Acceptance criteria were not independently reviewed in this report.
+PR titles follow Conventional Commits. Branches follow the team convention (`feat/*`, `fix/*` → develop) instead of `hu-xxx-dev`. Tests accompany the use cases, including PostgreSQL and RabbitMQ integration tests; `iam-core` has no framework or I/O dependencies.
 
 ## 6. Evidence links
 All PRs below were authored by `camilo28k` in the `code-corhuila` organization and were retrieved through the GitHub API with their creation date (UTC-5) and final state.
 
+**dlc-api-gateway**
+
+- 2026-11-07: [PR #18](https://github.com/code-corhuila/dlc-api-gateway/pull/18) — fix(gateway): require trusted Front address at deployment (merged).
+
+**dlc-clinical-api**
+
+- 2026-11-06: [PR #122](https://github.com/code-corhuila/dlc-clinical-api/pull/122) — fix(clinical): enforce approved clinical permission names (merged).
+- 2026-11-06: [PR #123](https://github.com/code-corhuila/dlc-clinical-api/pull/123) — fix(clinical): deny pending administrator grants (closed).
+
 **dlc-docs**
 
-- 2026-11-11: [PR #174](https://github.com/code-corhuila/dlc-docs/pull/174) — docs(devops): record local develop, qa and main stage databases (merged).
+- 2026-11-05: [PR #156](https://github.com/code-corhuila/dlc-docs/pull/156) — docs(iam): define direct identity email delivery (merged).
+- 2026-11-06: [PR #160](https://github.com/code-corhuila/dlc-docs/pull/160) — docs(auth): define Patients and Clinical JWT permissions (merged).
+- 2026-11-06: [PR #161](https://github.com/code-corhuila/dlc-docs/pull/161) — docs(iam): approve Administrator clinical read by role (merged).
+- 2026-11-07: [PR #166](https://github.com/code-corhuila/dlc-docs/pull/166) — docs(devops): record local IAM Patients Clinical integration (merged).
+
+**dlc-front**
+
+- 2026-11-07: [PR #114](https://github.com/code-corhuila/dlc-front/pull/114) — fix(front): send required body on IAM logout (merged).
+- 2026-11-07: [PR #123](https://github.com/code-corhuila/dlc-front/pull/123) — feat(front): select real Clinical portal for local integration (merged).
 
 **dlc-iam-api**
 
-- 2026-11-10: [PR #116](https://github.com/code-corhuila/dlc-iam-api/pull/116) — fix(iam): configurable SMTP and branded HTML code emails (merged).
-- 2026-11-10: [PR #117](https://github.com/code-corhuila/dlc-iam-api/pull/117) — chore(qa): promote ADR-020 service token core (1/2) (merged).
-- 2026-11-10: [PR #118](https://github.com/code-corhuila/dlc-iam-api/pull/118) — chore(qa): promote configurable SMTP and branded code emails (merged).
-- 2026-11-14: [PR #119](https://github.com/code-corhuila/dlc-iam-api/pull/119) — release(iam): promote QA-validated dlc-iam-api to 3.0.0 (open).
+- 2026-11-02: [PR #31](https://github.com/code-corhuila/dlc-iam-api/pull/31) — feat(iam-api): read owner-scoped session pages (merged).
+- 2026-11-02: [PR #32](https://github.com/code-corhuila/dlc-iam-api/pull/32) — feat(iam-api): expose own-session listing endpoint (merged).
+- 2026-11-02: [PR #33](https://github.com/code-corhuila/dlc-iam-api/pull/33) — feat(iam-api): deliver own-session listing endpoint to develop (merged).
+- 2026-11-02: [PR #34](https://github.com/code-corhuila/dlc-iam-api/pull/34) — feat(iam-api): model atomic refresh rotation and reuse response (merged).
+- 2026-11-02: [PR #35](https://github.com/code-corhuila/dlc-iam-api/pull/35) — feat(iam-api): rotate refresh credentials atomically in PostgreSQL (merged).
+- 2026-11-02: [PR #36](https://github.com/code-corhuila/dlc-iam-api/pull/36) — feat(iam-api): prepare atomic login IP attempt window (merged).
+- 2026-11-02: [PR #37](https://github.com/code-corhuila/dlc-iam-api/pull/37) — feat(iam-api): model cookie-identified logout revocation (merged).
+- 2026-11-03: [PR #38](https://github.com/code-corhuila/dlc-iam-api/pull/38) — feat(iam-api): persist atomic logout revocation (merged).
+- 2026-11-03: [PR #39](https://github.com/code-corhuila/dlc-iam-api/pull/39) — feat(iam-api): expose protected staff login (merged).
+- 2026-11-04: [PR #40](https://github.com/code-corhuila/dlc-iam-api/pull/40) — feat(iam-api): issue session-bound CSRF proof (merged).
+- 2026-11-04: [PR #41](https://github.com/code-corhuila/dlc-iam-api/pull/41) — feat(iam-api): expose cookie-protected logout (merged).
+- 2026-11-04: [PR #42](https://github.com/code-corhuila/dlc-iam-api/pull/42) — feat(iam-api): expose cookie-protected refresh (merged).
+- 2026-11-04: [PR #43](https://github.com/code-corhuila/dlc-iam-api/pull/43) — feat(iam-api): persist audited staff name updates (merged).
+- 2026-11-04: [PR #44](https://github.com/code-corhuila/dlc-iam-api/pull/44) — feat(iam-api): expose audited staff name update (merged).
+- 2026-11-04: [PR #45](https://github.com/code-corhuila/dlc-iam-api/pull/45) — feat(iam-api): define idempotent administrative unlock use case (merged).
+- 2026-11-04: [PR #46](https://github.com/code-corhuila/dlc-iam-api/pull/46) — test(iam-api): verify password reset atomicity in PostgreSQL (merged).
+- 2026-11-04: [PR #47](https://github.com/code-corhuila/dlc-iam-api/pull/47) — feat(iam-api): persist atomic role assignment changes (merged).
+- 2026-11-04: [PR #48](https://github.com/code-corhuila/dlc-iam-api/pull/48) — feat(iam-api): expose staff role assignments (merged).
+- 2026-11-04: [PR #49](https://github.com/code-corhuila/dlc-iam-api/pull/49) — feat(iam-api): persist audited administrative unlock (merged).
+- 2026-11-04: [PR #50](https://github.com/code-corhuila/dlc-iam-api/pull/50) — feat(iam-api): define audited staff disabling use case (merged).
+- 2026-11-04: [PR #51](https://github.com/code-corhuila/dlc-iam-api/pull/51) — feat(iam-api): define audited staff enabling use case (merged).
+- 2026-11-04: [PR #52](https://github.com/code-corhuila/dlc-iam-api/pull/52) — feat(iam-api): persist staff disabling and session revocation (merged).
+- 2026-11-04: [PR #53](https://github.com/code-corhuila/dlc-iam-api/pull/53) — feat(iam-api): expose audited administrator account unlock (merged).
+- 2026-11-04: [PR #54](https://github.com/code-corhuila/dlc-iam-api/pull/54) — feat(iam-api): persist audited staff enabling (merged).
+- 2026-11-04: [PR #55](https://github.com/code-corhuila/dlc-iam-api/pull/55) — feat(iam-api): expose audited staff disabling (merged).
+- 2026-11-04: [PR #56](https://github.com/code-corhuila/dlc-iam-api/pull/56) — feat(iam-api): read administrator-scoped staff (merged).
+- 2026-11-05: [PR #57](https://github.com/code-corhuila/dlc-iam-api/pull/57) — feat(iam-api): define staff registration use case (merged).
+- 2026-11-05: [PR #58](https://github.com/code-corhuila/dlc-iam-api/pull/58) — test(iam-api): verify staff reads in PostgreSQL (merged).
+- 2026-11-05: [PR #59](https://github.com/code-corhuila/dlc-iam-api/pull/59) — feat(iam-api): expose audited staff enabling (merged).
+- 2026-11-05: [PR #60](https://github.com/code-corhuila/dlc-iam-api/pull/60) — feat(iam-api): add keyed registration replay proof (merged).
+- 2026-11-05: [PR #61](https://github.com/code-corhuila/dlc-iam-api/pull/61) — feat(iam-api): define neutral password recovery requests (merged).
+- 2026-11-05: [PR #62](https://github.com/code-corhuila/dlc-iam-api/pull/62) — feat(iam-api): persist staff registration atomically (merged).
+- 2026-11-05: [PR #63](https://github.com/code-corhuila/dlc-iam-api/pull/63) — feat(iam-api): expose administrator staff registration (merged).
+- 2026-11-05: [PR #64](https://github.com/code-corhuila/dlc-iam-api/pull/64) — test(iam-api): match PostgreSQL UUID ordering (merged).
+- 2026-11-05: [PR #65](https://github.com/code-corhuila/dlc-iam-api/pull/65) — feat(iam-api): send recovery challenge after commit (merged).
+- 2026-11-05: [PR #66](https://github.com/code-corhuila/dlc-iam-api/pull/66) — feat(iam-api): persist replacement recovery challenges (merged).
+- 2026-11-05: [PR #67](https://github.com/code-corhuila/dlc-iam-api/pull/67) — feat(iam-api): add direct TLS identity email adapter (merged).
+- 2026-11-05: [PR #68](https://github.com/code-corhuila/dlc-iam-api/pull/68) — feat(iam-api): enforce shared recovery request limits (merged).
+- 2026-11-05: [PR #69](https://github.com/code-corhuila/dlc-iam-api/pull/69) — feat(iam-api): expose password recovery requests (merged).
+- 2026-11-05: [PR #70](https://github.com/code-corhuila/dlc-iam-api/pull/70) — feat(iam-api): persist verification request challenges (merged).
+- 2026-11-05: [PR #71](https://github.com/code-corhuila/dlc-iam-api/pull/71) — feat(iam-api): expose email verification requests (merged).
+- 2026-11-05: [PR #72](https://github.com/code-corhuila/dlc-iam-api/pull/72) — feat(iam-api): issue initial staff verification challenge (merged).
+- 2026-11-05: [PR #73](https://github.com/code-corhuila/dlc-iam-api/pull/73) — feat(iam-api): track confirmed outbox delivery (merged).
+- 2026-11-05: [PR #74](https://github.com/code-corhuila/dlc-iam-api/pull/74) — feat(iam-api): publish confirmed IAM outbox events to RabbitMQ (merged).
+- 2026-11-05: [PR #75](https://github.com/code-corhuila/dlc-iam-api/pull/75) — feat(iam-api): schedule bounded outbox delivery (merged).
+- 2026-11-05: [PR #76](https://github.com/code-corhuila/dlc-iam-api/pull/76) — test(iam-api): verify PostgreSQL to RabbitMQ outbox delivery (merged).
+- 2026-11-05: [PR #77](https://github.com/code-corhuila/dlc-iam-api/pull/77) — chore(iam-api): package non-root runtime image (merged).
+- 2026-11-05: [PR #78](https://github.com/code-corhuila/dlc-iam-api/pull/78) — chore(iam-api): configure stage-scoped Compose runtime (merged).
+- 2026-11-05: [PR #79](https://github.com/code-corhuila/dlc-iam-api/pull/79) — fix(iam-api): allow Spring proxies for JDBC repositories (merged).
+- 2026-11-05: [PR #80](https://github.com/code-corhuila/dlc-iam-api/pull/80) — docs(iam-api): record shared PostgreSQL develop integration (merged).
+- 2026-11-06: [PR #81](https://github.com/code-corhuila/dlc-iam-api/pull/81) — fix(iam-api): honor client IP only from trusted gateway (merged).
+- 2026-11-06: [PR #82](https://github.com/code-corhuila/dlc-iam-api/pull/82) — fix(iam-api): disable automatic forwarded-header rewriting (merged).
+- 2026-11-06: [PR #83](https://github.com/code-corhuila/dlc-iam-api/pull/83) — feat(iam-api): issue approved Patients JWT permissions (merged).
+- 2026-11-06: [PR #84](https://github.com/code-corhuila/dlc-iam-api/pull/84) — fix(iam): validate current JWT permission claims (merged).
+- 2026-11-07: [PR #85](https://github.com/code-corhuila/dlc-iam-api/pull/85) — feat(iam): grant administrator clinical read by role (merged).
+- 2026-11-07: [PR #86](https://github.com/code-corhuila/dlc-iam-api/pull/86) — docs(iam): align permission catalog with ADR-019 (merged).
+- 2026-11-07: [PR #87](https://github.com/code-corhuila/dlc-iam-api/pull/87) — fix(iam): require trusted Gateway address at deployment (merged).
 
 **dlc-iam-db**
 
-- 2026-11-10: [PR #33](https://github.com/code-corhuila/dlc-iam-db/pull/33) — chore(qa): promote staff display name, session version and audit reasons (merged).
-- 2026-11-10: [PR #34](https://github.com/code-corhuila/dlc-iam-db/pull/34) — chore(qa): promote staff lifecycle audit requests and registration replay (merged).
-- 2026-11-10: [PR #35](https://github.com/code-corhuila/dlc-iam-db/pull/35) — chore(qa): promote login IP windows, lock expiry audit, email limits and outbox state (merged).
-- 2026-11-14: [PR #36](https://github.com/code-corhuila/dlc-iam-db/pull/36) — release(iam): promote QA-validated dlc-iam-db to 3.0.0 (open).
+- 2026-11-04: [PR #25](https://github.com/code-corhuila/dlc-iam-db/pull/25) — feat(iam-db): retain audit reasons and unlock request keys (merged).
+- 2026-11-04: [PR #26](https://github.com/code-corhuila/dlc-iam-db/pull/26) — feat(iam-db): audit staff lifecycle request reasons (merged).
+- 2026-11-05: [PR #27](https://github.com/code-corhuila/dlc-iam-db/pull/27) — feat(iam-db): persist registration replay requests (merged).
+- 2026-11-05: [PR #28](https://github.com/code-corhuila/dlc-iam-db/pull/28) — fix(iam-db): integrate missing login protection migrations (merged).
+- 2026-11-05: [PR #29](https://github.com/code-corhuila/dlc-iam-db/pull/29) — feat(iam-db): store identity email request limits (merged).
+- 2026-11-05: [PR #30](https://github.com/code-corhuila/dlc-iam-db/pull/30) — feat(iam-db): track owner outbox delivery state (merged).
 
 **dlc-iam-portal**
 
-- 2026-11-10: [PR #68](https://github.com/code-corhuila/dlc-iam-portal/pull/68) — fix(iam-portal): move account activation link to login and clarify code wording (merged).
-- 2026-11-10: [PR #69](https://github.com/code-corhuila/dlc-iam-portal/pull/69) — chore(qa): promote gateway smoke and auth code links (merged).
-- 2026-11-14: [PR #70](https://github.com/code-corhuila/dlc-iam-portal/pull/70) — release(iam): promote QA-validated dlc-iam-portal to 3.0.0 (open).
+- 2026-11-06: [PR #67](https://github.com/code-corhuila/dlc-iam-portal/pull/67) — test(iam-portal): verify requests through front and gateway (merged).
 
-**dlc-infra**
+**dlc-patient-api**
 
-- 2026-11-10: [PR #1](https://github.com/code-corhuila/dlc-infra/pull/1) — chore(infra): add GitHub baseline for the infrastructure repository (merged).
-- 2026-11-11: [PR #17](https://github.com/code-corhuila/dlc-infra/pull/17) — feat(infra): run develop, qa and main stages (merged).
-- 2026-11-13: [PR #18](https://github.com/code-corhuila/dlc-infra/pull/18) — chore(release): promote local develop, qa and main stages to qa (merged).
-
-**dlc-infra-postgres**
-
-- 2026-11-10: [PR #7](https://github.com/code-corhuila/dlc-infra-postgres/pull/7) — chore(qa): promote PostgreSQL scaffold and IAM connectivity (merged).
-- 2026-11-10: [PR #8](https://github.com/code-corhuila/dlc-infra-postgres/pull/8) — chore(qa): promote owner isolation, patients_app bootstrap and CI (merged).
+- 2026-11-06: [PR #33](https://github.com/code-corhuila/dlc-patient-api/pull/33) — fix(patients): require approved IAM permission names (merged).
+- 2026-11-07: [PR #48](https://github.com/code-corhuila/dlc-patient-api/pull/48) — docs(patients): explain private internal listener deployment (merged).
