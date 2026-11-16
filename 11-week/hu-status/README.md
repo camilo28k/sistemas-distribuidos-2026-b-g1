@@ -17,17 +17,16 @@
 | HU-IAM-003 | Staff account administration: observability for registration through Gateway and Auth | doing | [Journey](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/f8648863f29045467de5dbce89d0f0d9bdbadf0e), [instrumentation](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/23c73d8a39dcdee1808454eadb3ceb0a941c09a1), [tests](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/2ca68d6f87fe7bcd50831ae8b71733ca1af6fa65) |
 | N/A - W11 technical workshop | Delivery 1 technical checkpoints CP0-CP4 | done | [Setup](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/709a46e4aff92d9e17a79c91e4761bf109cf20fa), [logs](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/80338aabe796d6de4a08f0ad2f3985a1ccd7ff98), [metrics](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/a71f3950b18833bb959c819aca845cab1f4d2cbd) |
 | N/A - W11 delivery 2 | Technical artifacts CP6-CP9: SLOs, alerts, runbook and analytical incident exercise | done | [SLOs](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/0b16452a05825a7f7dc01e8d0ea179b5aec9ca80), [alerts](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/d26da4b35b131789d0a9481d509698f9e3c97496), [runbook](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/aed8cc6a3452879ab8a45515b98ac8f60f4d5e71), [incident](https://github.com/camilo28k/sistemas-distribuidos-2026-b-g1/commit/aff4ca9f13d38251f26d704965581403967c39c7) |
-| HU-IAM-001 | Staff sign-in: IAM persistence, verified login use case, JWT and public JWKS | doing | [dlc-iam-db #8](https://github.com/code-corhuila/dlc-iam-db/pull/8), [dlc-iam-api #7](https://github.com/code-corhuila/dlc-iam-api/pull/7), [dlc-iam-api #8](https://github.com/code-corhuila/dlc-iam-api/pull/8), [dlc-iam-api #9](https://github.com/code-corhuila/dlc-iam-api/pull/9), [dlc-iam-api #10](https://github.com/code-corhuila/dlc-iam-api/pull/10), [dlc-iam-api #11](https://github.com/code-corhuila/dlc-iam-api/pull/11), [dlc-iam-api #12](https://github.com/code-corhuila/dlc-iam-api/pull/12), [dlc-infra-postgres #3](https://github.com/code-corhuila/dlc-infra-postgres/pull/3) |
-| HU-IAM-002 | Staff role management: role assignment audit persistence | doing | [dlc-iam-db #9](https://github.com/code-corhuila/dlc-iam-db/pull/9), [dlc-iam-db #16](https://github.com/code-corhuila/dlc-iam-db/pull/16) |
-| HU-IAM-003 | Staff account administration: lifecycle audit, revocation and display name | doing | [dlc-iam-db #11](https://github.com/code-corhuila/dlc-iam-db/pull/11), [dlc-iam-db #18](https://github.com/code-corhuila/dlc-iam-db/pull/18), [dlc-iam-db #21](https://github.com/code-corhuila/dlc-iam-db/pull/21) |
-| HU-IAM-004 | Password recovery and email verification: challenge safety persistence | doing | [dlc-iam-db #10](https://github.com/code-corhuila/dlc-iam-db/pull/10), [dlc-iam-db #17](https://github.com/code-corhuila/dlc-iam-db/pull/17) |
-| HU-IAM-005 | Account-lock protection: lock after three failures, IP attempt limits, audited unlock | doing | [dlc-iam-db #12](https://github.com/code-corhuila/dlc-iam-db/pull/12), [dlc-iam-db #19](https://github.com/code-corhuila/dlc-iam-db/pull/19), [dlc-iam-db #22](https://github.com/code-corhuila/dlc-iam-db/pull/22), [dlc-iam-db #23](https://github.com/code-corhuila/dlc-iam-db/pull/23), [dlc-iam-api #13](https://github.com/code-corhuila/dlc-iam-api/pull/13), [dlc-iam-api #14](https://github.com/code-corhuila/dlc-iam-api/pull/14), [dlc-iam-api #15](https://github.com/code-corhuila/dlc-iam-api/pull/15), [dlc-iam-api #16](https://github.com/code-corhuila/dlc-iam-api/pull/16), [dlc-docs #116](https://github.com/code-corhuila/dlc-docs/pull/116) |
-| HU-IAM-006 | Own sessions: refresh lineage and session revocation persistence | doing | [dlc-iam-db #13](https://github.com/code-corhuila/dlc-iam-db/pull/13), [dlc-iam-db #20](https://github.com/code-corhuila/dlc-iam-db/pull/20) |
+| HU-IAM-001 | Staff sign-in: login and recovery layout and artwork refinements | doing | [dlc-iam-portal #58](https://github.com/code-corhuila/dlc-iam-portal/pull/58), [dlc-iam-portal #59](https://github.com/code-corhuila/dlc-iam-portal/pull/59), [dlc-iam-portal #63](https://github.com/code-corhuila/dlc-iam-portal/pull/63), [dlc-front #90](https://github.com/code-corhuila/dlc-front/pull/90), [dlc-front #93](https://github.com/code-corhuila/dlc-front/pull/93) |
+| HU-IAM-003 | Staff account administration: staff directory and registration modal aligned with the mockup | doing | [dlc-iam-portal #54](https://github.com/code-corhuila/dlc-iam-portal/pull/54), [dlc-iam-portal #56](https://github.com/code-corhuila/dlc-iam-portal/pull/56), [dlc-iam-portal #61](https://github.com/code-corhuila/dlc-iam-portal/pull/61), [dlc-iam-portal #62](https://github.com/code-corhuila/dlc-iam-portal/pull/62) |
+| HU-IAM-006 | Own sessions: refreshed view and retry outside the alert | doing | [dlc-iam-portal #55](https://github.com/code-corhuila/dlc-iam-portal/pull/55), [dlc-iam-portal #57](https://github.com/code-corhuila/dlc-iam-portal/pull/57), [dlc-iam-portal #60](https://github.com/code-corhuila/dlc-iam-portal/pull/60) |
+| Release 2.0.0 | IAM portal promoted from QA to main with its changelog; shell integration promoted to QA | done | [dlc-iam-portal #64](https://github.com/code-corhuila/dlc-iam-portal/pull/64), [dlc-iam-portal #65](https://github.com/code-corhuila/dlc-iam-portal/pull/65), [dlc-iam-portal #66](https://github.com/code-corhuila/dlc-iam-portal/pull/66), [dlc-front #87](https://github.com/code-corhuila/dlc-front/pull/87) |
+| Infrastructure | Shared PostgreSQL infrastructure scaffold | done | [dlc-infra-postgres #2](https://github.com/code-corhuila/dlc-infra-postgres/pull/2) |
 
 The workshop task is separate from full HU acceptance. HU-IAM-003 remains doing:
 the exercise does not establish working registration against the team's real IAM.
 
-The HU-IAM-001 to HU-IAM-006 rows after the workshop rows record the project work done the same week in the team repositories. Every PR listed was merged. The `dlc-iam-db` story PRs #8–#13 and #21 target `develop` and #14–#20 target `qa`; #22 and #23 were stacked on the #21 branch and reached `develop` later through `dlc-iam-db` #28 (week 13). The `dlc-iam-api` PRs #9–#16 were stacked on HU feature branches (`feat/hu-iam-001-*`, `feat/hu-iam-005-*`); they reached `develop` through #17 this week and #20, #22 and #23 in week 12. The stories stay `doing`: the API endpoints for roles, lifecycle, recovery and sessions were not yet implemented this week, and no end-to-end acceptance through Gateway and Front was run.
+The rows after the workshop rows record the project work done the same week (12-18 October) in the team repositories. Every PR listed was merged. The portal stories stay `doing`: the portal worked against the documented contracts, and the IAM API that serves them did not exist yet, so no live login, administration or session flow through Gateway and Auth was possible this week.
 
 ## 2. My individual contribution
 - Mapped administrator-driven staff registration through dlc-iam-portal, api-gateway and auth-service, including PostgreSQL iam ownership and asynchronous UserRegistered publication through the Auth outbox.
@@ -44,13 +43,10 @@ The HU-IAM-001 to HU-IAM-006 rows after the workshop rows record the project wor
 - Completed an analytical incident tabletop using the existing two-second Gateway timeout: a three-second downstream response affects 25% of traffic for 40 minutes. Included a trace, four illustrative logs, SLI calculations, alert timing, a blameless postmortem and follow-up stories.
 - Updated this weekly status for CP10 with delivery 2 evidence and outstanding integration work.
 
-Project work in the Di Lucca team repositories during the same week (19-25 October):
-- I designed and merged the IAM-owned PostgreSQL migrations for all six IAM stories in `dlc-iam-db`: staff persistence, role assignment audit, verification and recovery challenge guards, staff lifecycle audit and revocation, account lock and unlock audit, and refresh lineage with session revocation (PRs #8–#13).
-- I promoted the reviewed database scaffold and each story's persistence to `qa` through separate promotion PRs (#14–#20), then added the owned staff display name for the Auth contract, minimal login IP attempt windows and the audit of automatic unlock expiry (#21–#23).
-- I created the Spring Boot scaffold of `dlc-iam-api` and implemented the verified staff login use case, password and token security adapters, atomic persistence of the login session with the owner outbox, and the login and public JWKS endpoints, with the HU-IAM-001 verification recorded (PRs #7–#12).
-- I implemented the account-lock security: lock after three failed passwords, direct-peer login attempt limits in PostgreSQL, current-actor verification for protected operations and authorized, audited staff unlock (#13–#16), and promoted the reviewed login security adapters to `develop` (#17).
-- In `dlc-infra-postgres` I provisioned shared PostgreSQL connectivity for IAM and added a test that validates owner schema isolation (#3, #4).
-- I documented the withdrawal of MFA from the project scope (`dlc-docs` #116) and opened the planning issues for the independent Clinical MongoDB replica set: provisioning, owner-scoped access and migration handoff, backup/restore and failure isolation, and secure authentication/transport/storage (`dlc-infra-mongo` #1–#4, `dlc-docs` #117).
+Project work in the Di Lucca team repositories during the same week (12-18 October):
+- I refined the IAM portal screens: the staff directory and the registration modal were aligned with the management mockup, the own-sessions view was refreshed with the retry kept outside the alert, and the login and recovery layouts and artwork were adjusted (`dlc-iam-portal` #54–#63); in `dlc-front` the public IAM host was stretched to the footer (#90, #93) and the shell portal integration was promoted to QA (#87).
+- I prepared the portal release: QA release readiness (#64), the promotion of the QA-validated portal to `main` as 2.0.0 (#65) and its changelog (#66).
+- I created the shared PostgreSQL infrastructure scaffold in `dlc-infra-postgres` (#2).
 
 ## 3. Blockers and risks
 - The Auth endpoint used for tests is a synthetic stub. Live authentication, staff validation, PostgreSQL transactions, RabbitMQ publication and production authorization were not exercised.
@@ -61,9 +57,8 @@ Project work in the Di Lucca team repositories during the same week (19-25 Octob
 - CP9 is an analytical tabletop, not an executed 160-request load test or a production incident. Its minute-4 and minute-9 alert predictions assume the documented steady synthetic traffic and evaluation grid; actual scrape and evaluation timing can differ.
 - Alert YAML parsing and arithmetic checks do not establish PromQL correctness at runtime. No promtool rule tests or live Prometheus evaluations were executed.
 - The supplied reflection export contains entries through CP9 but did not include the required one-page personal implementation plan. The latest Google Docs content, teacher Editor permission and Moodle submission remain unverified. Technical closure does not establish completion of these personal submission requirements.
-- The API covers login and account lock only; role, lifecycle, recovery and session endpoints are still pending, so the persistence for those stories is not yet exercised by the API.
-- Live integration with the Gateway and `dlc-front` was not verified this week.
-- MFA was removed from the scope; account protection relies on passwords, lockout and attempt limits.
+- The portal release 2.0.0 does not establish live Auth/Gateway integration: the IAM API and its database migrations were still to be built.
+- MFA screens still existed in the portal while MFA scope was under discussion.
 
 ## 4. Plan for next week
 - Integrate tracing and structured logs into the real IAM API and Gateway, preserving authorization, safe error messages and sensitive-data exclusions.
@@ -72,7 +67,7 @@ Project work in the Di Lucca team repositories during the same week (19-25 Octob
 - Add an authorized reconciliation path and verify that retrying an uncertain registration outcome with the same idempotency key cannot create duplicate staff accounts.
 - Execute the proposed partial-delay integration scenario against representative IAM dependencies and compare measured logs, metrics and outcomes with the analytical CP9 predictions.
 - Add promtool rule tests for both alert windows, recovery and missing/low-volume traffic, then validate target feasibility with the team before enabling production alerts.
-- Project: implement the remaining IAM API use cases (role replacement, email verification, password reset, session validation for owner services and own-session revocation) and bring the login persistence to `develop`.
+- Project: build the IAM database migrations and the IAM API (login, JWKS and account lock) so the portal can be integrated with a real backend.
 
 These are technical follow-up proposals. The student's personal priorities, sprint
 choices, blockers and learning belong in the separately authored Google Docs plan.
@@ -91,7 +86,7 @@ Workshop commits use the individual fork's main branch; environment promotion
 and PR workflow were not exercised. Full domain-boundary and deployment-secret
 compliance remain unverified. The exercise uses synthetic data and configurable
 local endpoints, but that is not a security audit of the team application.
-For the project work, `dlc-iam-api` and `dlc-infra-postgres` PRs added automated tests and `iam-core` has no framework or I/O dependencies; this does not change the unchecked workshop items. Each workshop commit adds no more than 150 lines. CP3 has two separate pushes;
+For the project work, the portal PRs follow Conventional Commits and the release went through QA; this does not change the unchecked workshop items. Each workshop commit adds no more than 150 lines. CP3 has two separate pushes;
 its second increment uses three commits belonging only to CP3.
 
 ## 6. Evidence links
@@ -111,44 +106,29 @@ its second increment uses three commits belonging only to CP3.
 - [Personal reflection document](https://docs.google.com/document/d/1BlAX8AtOa5-qsU91NF9cehHBdqza1EMEZRU_DtC6y_U/edit).
 
 Project PRs of the same week, authored by `camilo28k` in the `code-corhuila` organization and retrieved through the GitHub API with their creation date (UTC-5) and final state:
-**dlc-docs**
 
-- 2026-10-21: [PR #116](https://github.com/code-corhuila/dlc-docs/pull/116) — docs(iam): withdraw MFA from project scope (merged).
+**dlc-front**
 
-**dlc-iam-api**
+- 2026-10-12: [PR #87](https://github.com/code-corhuila/dlc-front/pull/87) — chore(iam): promote shell portal integration to QA (merged).
+- 2026-10-13: [PR #90](https://github.com/code-corhuila/dlc-front/pull/90) — fix(shell): stretch public IAM host to footer (merged).
+- 2026-10-13: [PR #93](https://github.com/code-corhuila/dlc-front/pull/93) — fix(shell): stretch public IAM host to footer (merged).
 
-- 2026-10-22: [PR #7](https://github.com/code-corhuila/dlc-iam-api/pull/7) — chore(iam-api): establish Spring Boot API scaffold (merged).
-- 2026-10-22: [PR #8](https://github.com/code-corhuila/dlc-iam-api/pull/8) — feat(iam-api): define verified staff login use case (merged).
-- 2026-10-22: [PR #9](https://github.com/code-corhuila/dlc-iam-api/pull/9) — feat(iam-api): add password and token security adapters (merged).
-- 2026-10-22: [PR #10](https://github.com/code-corhuila/dlc-iam-api/pull/10) — feat(iam-api): persist login session and owner outbox atomically (merged).
-- 2026-10-23: [PR #11](https://github.com/code-corhuila/dlc-iam-api/pull/11) — feat(iam-api): expose login and public JWKS endpoints (merged).
-- 2026-10-23: [PR #12](https://github.com/code-corhuila/dlc-iam-api/pull/12) — docs(iam-api): record HU-IAM-001 login verification (merged).
-- 2026-10-23: [PR #13](https://github.com/code-corhuila/dlc-iam-api/pull/13) — feat(iam-api): lock accounts after three failed passwords (merged).
-- 2026-10-23: [PR #14](https://github.com/code-corhuila/dlc-iam-api/pull/14) — feat(iam-api): limit direct-peer login attempts in PostgreSQL (merged).
-- 2026-10-23: [PR #15](https://github.com/code-corhuila/dlc-iam-api/pull/15) — feat(iam-api): verify current staff actor for protected operations (merged).
-- 2026-10-23: [PR #16](https://github.com/code-corhuila/dlc-iam-api/pull/16) — feat(iam-api): authorize audited staff unlock (merged).
-- 2026-10-23: [PR #17](https://github.com/code-corhuila/dlc-iam-api/pull/17) — feat(iam-api): promote reviewed login security adapters to develop (merged).
+**dlc-iam-portal**
 
-**dlc-iam-db**
-
-- 2026-10-20: [PR #8](https://github.com/code-corhuila/dlc-iam-db/pull/8) — feat(iam-db): add IAM-owned persistence for HU-IAM-001 (merged).
-- 2026-10-21: [PR #9](https://github.com/code-corhuila/dlc-iam-db/pull/9) — feat(iam-db): persist role assignment audit for HU-IAM-002 (merged).
-- 2026-10-21: [PR #10](https://github.com/code-corhuila/dlc-iam-db/pull/10) — feat(iam-db): guard verification and recovery challenges (merged).
-- 2026-10-21: [PR #11](https://github.com/code-corhuila/dlc-iam-db/pull/11) — feat(iam-db): persist staff lifecycle audit and revocation (merged).
-- 2026-10-21: [PR #12](https://github.com/code-corhuila/dlc-iam-db/pull/12) — feat(iam-db): persist account lock and unlock audit (merged).
-- 2026-10-21: [PR #13](https://github.com/code-corhuila/dlc-iam-db/pull/13) — feat(iam-db): protect refresh lineage and session revocation (merged).
-- 2026-10-22: [PR #14](https://github.com/code-corhuila/dlc-iam-db/pull/14) — chore(iam-db): promote reviewed database scaffold to qa (merged).
-- 2026-10-22: [PR #15](https://github.com/code-corhuila/dlc-iam-db/pull/15) — feat(iam-db): promote HU-IAM-001 persistence to qa (merged).
-- 2026-10-22: [PR #16](https://github.com/code-corhuila/dlc-iam-db/pull/16) — feat(iam-db): promote HU-IAM-002 role audit to qa (merged).
-- 2026-10-22: [PR #17](https://github.com/code-corhuila/dlc-iam-db/pull/17) — feat(iam-db): promote HU-IAM-004 challenge safety to qa (merged).
-- 2026-10-22: [PR #18](https://github.com/code-corhuila/dlc-iam-db/pull/18) — feat(iam-db): promote HU-IAM-003 staff lifecycle to qa (merged).
-- 2026-10-22: [PR #19](https://github.com/code-corhuila/dlc-iam-db/pull/19) — feat(iam-db): promote HU-IAM-005 account lock to qa (merged).
-- 2026-10-22: [PR #20](https://github.com/code-corhuila/dlc-iam-db/pull/20) — feat(iam-db): promote HU-IAM-006 session lineage to qa (merged).
-- 2026-10-22: [PR #21](https://github.com/code-corhuila/dlc-iam-db/pull/21) — fix(iam-db): add owned staff display name for Auth contract (merged).
-- 2026-10-23: [PR #22](https://github.com/code-corhuila/dlc-iam-db/pull/22) — feat(iam-db): store minimal login IP attempt windows (merged).
-- 2026-10-23: [PR #23](https://github.com/code-corhuila/dlc-iam-db/pull/23) — fix(iam-db): audit automatic account unlock expiry (merged).
+- 2026-10-12: [PR #54](https://github.com/code-corhuila/dlc-iam-portal/pull/54) — feat(iam): align staff directory with management mockup (merged).
+- 2026-10-12: [PR #55](https://github.com/code-corhuila/dlc-iam-portal/pull/55) — feat(iam): refresh own sessions view (merged).
+- 2026-10-12: [PR #56](https://github.com/code-corhuila/dlc-iam-portal/pull/56) — chore(iam): promote staff directory visual refresh to QA (merged).
+- 2026-10-12: [PR #57](https://github.com/code-corhuila/dlc-iam-portal/pull/57) — chore(iam): promote own sessions visual refresh to QA (merged).
+- 2026-10-12: [PR #58](https://github.com/code-corhuila/dlc-iam-portal/pull/58) — fix(iam): stretch auth artwork within public frame (merged).
+- 2026-10-13: [PR #59](https://github.com/code-corhuila/dlc-iam-portal/pull/59) — fix(iam): refine login and recovery layouts (merged).
+- 2026-10-13: [PR #60](https://github.com/code-corhuila/dlc-iam-portal/pull/60) — fix(iam): keep own sessions retry outside alert (merged).
+- 2026-10-13: [PR #61](https://github.com/code-corhuila/dlc-iam-portal/pull/61) — fix(iam): align staff directory and registration modal (merged).
+- 2026-10-13: [PR #62](https://github.com/code-corhuila/dlc-iam-portal/pull/62) — fix(iam): promote staff directory and registration modal to QA (merged).
+- 2026-10-13: [PR #63](https://github.com/code-corhuila/dlc-iam-portal/pull/63) — fix(iam): stretch login artwork within public frame (merged).
+- 2026-10-13: [PR #64](https://github.com/code-corhuila/dlc-iam-portal/pull/64) — Qa iam portal release readiness (merged).
+- 2026-10-13: [PR #65](https://github.com/code-corhuila/dlc-iam-portal/pull/65) — release(iam): promote QA-validated portal to 2.0.0 (merged).
+- 2026-10-13: [PR #66](https://github.com/code-corhuila/dlc-iam-portal/pull/66) — docs(iam): add v2.0.0 changelog (merged).
 
 **dlc-infra-postgres**
 
-- 2026-10-19: [PR #3](https://github.com/code-corhuila/dlc-infra-postgres/pull/3) — feat(infra-postgres): provision shared PostgreSQL connectivity for IAM (merged).
-- 2026-10-20: [PR #4](https://github.com/code-corhuila/dlc-infra-postgres/pull/4) — test(infra-postgres): validate owner schema isolation (merged).
+- 2026-10-15: [PR #2](https://github.com/code-corhuila/dlc-infra-postgres/pull/2) — chore(infra-postgres): scaffold shared PostgreSQL infrastructure (merged).
